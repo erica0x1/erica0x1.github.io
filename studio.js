@@ -46,19 +46,42 @@
 
   // A soft, local Bayer-dither brush. Only runs while the pointer is nearby.
   const vertexSource=`attribute vec2 a_position; varying vec2 v_uv; void main(){v_uv=a_position*.5+.5;gl_Position=vec4(a_position,0.,1.);}`;
-  const fragmentSource=`precision mediump float;
+  const fragmentSource=`
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
     varying vec2 v_uv; uniform sampler2D u_image; uniform vec2 u_resolution; uniform vec2 u_imageSize; uniform vec2 u_mouse; uniform float u_reveal; uniform float u_radius; uniform float u_pixel;
     float bayer(vec2 p){float x=mod(p.x,4.);float y=mod(p.y,4.);if(y<1.){if(x<1.)return 0.;if(x<2.)return 8.;if(x<3.)return 2.;return 10.;}if(y<2.){if(x<1.)return 12.;if(x<2.)return 4.;if(x<3.)return 14.;return 6.;}if(y<3.){if(x<1.)return 3.;if(x<2.)return 11.;if(x<3.)return 1.;return 9.;}if(x<1.)return 15.;if(x<2.)return 7.;if(x<3.)return 13.;return 5.;}
-    void main(){vec2 uv=v_uv;float ca=u_resolution.x/u_resolution.y;float ia=u_imageSize.x/u_imageSize.y;if(ia>ca)uv.x=(uv.x-.5)*ca/ia+.5;else uv.y=(uv.y-.5)*ia/ca+.5;vec3 col=texture2D(u_image,uv).rgb;float lum=dot(col,vec3(.2126,.7152,.0722));float threshold=(bayer(floor(gl_FragCoord.xy/u_pixel))+.5)/16.;float bit=step(threshold,lum);vec3 ink=mix(vec3(.14,.16,.14),vec3(.97,.96,.91),bit);vec2 delta=gl_FragCoord.xy-u_mouse;float angle=atan(delta.y,delta.x);float rough=sin(angle*21.)*.045+sin(angle*43.+1.)*.025;float d=length(delta)/u_radius;float mask=1.-smoothstep(.53+rough,1.+rough,d);gl_FragColor=vec4(ink,mask*u_reveal);}`;
+    void main(){
+      // Transparent pixels must also carry zero RGB for page compositing.
+      if(u_reveal<=0.){gl_FragColor=vec4(0.);return;}
+      // Normalize before length() so high-DPI pixel distances cannot overflow mediump.
+      vec2 delta=(v_uv-u_mouse)*(u_resolution/u_radius);
+      float d=length(delta);
+      if(d>=1.08){gl_FragColor=vec4(0.);return;}
+      float angle=atan(delta.y,delta.x+.00001);
+      float rough=sin(angle*21.)*.045+sin(angle*43.+1.)*.025;
+      float opacity=(1.-smoothstep(.53+rough,1.+rough,d))*clamp(u_reveal,0.,1.);
+      vec2 uv=v_uv;float ca=u_resolution.x/u_resolution.y;float ia=u_imageSize.x/u_imageSize.y;
+      if(ia>ca)uv.x=(uv.x-.5)*ca/ia+.5;else uv.y=(uv.y-.5)*ia/ca+.5;
+      vec3 col=texture2D(u_image,uv).rgb;
+      float lum=dot(col,vec3(.2126,.7152,.0722));
+      float threshold=(bayer(floor(gl_FragCoord.xy/u_pixel))+.5)/16.;
+      vec3 ink=mix(vec3(.14,.16,.14),vec3(.97,.96,.91),step(threshold,lum));
+      gl_FragColor=vec4(ink*opacity,opacity);
+    }`;
 
   function ditherEffect(surface){
     const img=surface.querySelector('img');
     let canvas=surface.querySelector('canvas');
     if(!img||!canvas)return;
     let gl=null,context=null,program=null,uniforms={},processed=null;
-    let width=1,height=1,ratio=1,active=false,visible=true,alpha=0,frame=0;
+    let width=1,height=1,ratio=1,active=false,visible=true,alpha=0,frame=0,enabled=true,lastTime=0;
     let mouse={x:.5,y:.5},target={x:.5,y:.5};
-    try{gl=canvas.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:false,preserveDrawingBuffer:false});}catch{}
+    canvas.style.opacity='0';
+    try{gl=canvas.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:true,preserveDrawingBuffer:false,depth:false,stencil:false});}catch{}
     if(gl){
       const compile=(type,source)=>{const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){gl.deleteShader(s);throw new Error('Shader compilation failed');}return s;};
       try{
@@ -86,24 +109,39 @@
       for(let y=0;y<h;y++)for(let x=0;x<w;x++){const i=(y*w+x)*4;const lum=(.2126*data.data[i]+.7152*data.data[i+1]+.0722*data.data[i+2])/255;const v=lum>(matrix[(Math.floor(y/2)%4)*4+Math.floor(x/2)%4]+.5)/16?245:36;data.data[i]=v;data.data[i+1]=v;data.data[i+2]=v===245?233:35;}
       c.putImageData(data,0,0);
     };
-    const resize=()=>{const r=surface.getBoundingClientRect();if(!r.width||!r.height)return;width=r.width;height=r.height;ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);if(gl)gl.viewport(0,0,canvas.width,canvas.height);else prepareFallback();};
-    function paint(){
-      frame=0;if(!visible||document.hidden)return;
-      alpha+=(Number(active)-alpha)*.14;mouse.x+=(target.x-mouse.x)*.18;mouse.y+=(target.y-mouse.y)*.18;
+    function resetEffect(){
+      active=false;alpha=0;cancelAnimationFrame(frame);frame=0;lastTime=0;canvas.style.opacity='0';
+      if(gl&&!gl.isContextLost()){gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);}
+      else if(context){context.setTransform(1,0,0,1,0,0);context.clearRect(0,0,canvas.width,canvas.height);}
+    }
+    const resize=()=>{const r=surface.getBoundingClientRect();if(!r.width||!r.height)return;resetEffect();width=r.width;height=r.height;ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);if(gl)gl.viewport(0,0,canvas.width,canvas.height);else{try{prepareFallback();}catch{enabled=false;}}};
+    function paint(now){
+      frame=0;if(!enabled||!visible||document.hidden){resetEffect();return;}
+      const elapsed=lastTime?Math.max(0,now-lastTime):1000/60;lastTime=now;
+      const fade=1-Math.exp(-elapsed/110),follow=1-Math.exp(-elapsed/84);
+      alpha+=(Number(active)-alpha)*fade;mouse.x+=(target.x-mouse.x)*follow;mouse.y+=(target.y-mouse.y)*follow;
       if(!active&&alpha<.003)alpha=0;
       const radius=Math.min(150,width*.34);
-      if(gl){gl.useProgram(program);gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);gl.uniform2f(uniforms.mouse,mouse.x*canvas.width,(1-mouse.y)*canvas.height);gl.uniform1f(uniforms.reveal,alpha);gl.uniform1f(uniforms.radius,radius*ratio);gl.uniform1f(uniforms.pixel,2.5*ratio);gl.drawArrays(gl.TRIANGLES,0,6);}
+      // The DOM layer independently enforces idle visibility and the brush boundary.
+      // This keeps the original artwork intact even if a GPU compositor mishandles alpha.
+      canvas.style.opacity=alpha>0?'1':'0';
+      canvas.style.clipPath=`circle(${radius*1.08}px at ${mouse.x*width}px ${mouse.y*height}px)`;
+      if(gl){gl.useProgram(program);gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);gl.uniform2f(uniforms.mouse,mouse.x,1-mouse.y);gl.uniform1f(uniforms.reveal,alpha);gl.uniform1f(uniforms.radius,radius*ratio);gl.uniform1f(uniforms.pixel,2.5*ratio);gl.drawArrays(gl.TRIANGLES,0,6);}
       else if(processed){context.setTransform(ratio,0,0,ratio,0,0);context.clearRect(0,0,width,height);context.globalCompositeOperation='source-over';context.globalAlpha=alpha;context.drawImage(processed,0,0,width,height);context.globalAlpha=1;context.globalCompositeOperation='destination-in';const grad=context.createRadialGradient(mouse.x*width,mouse.y*height,radius*.35,mouse.x*width,mouse.y*height,radius);grad.addColorStop(0,'#fff');grad.addColorStop(1,'#fff0');context.fillStyle=grad;context.fillRect(0,0,width,height);context.globalCompositeOperation='source-over';}
-      if(active||alpha>0)frame=requestAnimationFrame(paint);
+      if(active||alpha>0)frame=requestAnimationFrame(paint);else lastTime=0;
     }
-    const start=()=>{if(!frame&&visible)frame=requestAnimationFrame(paint);};
-    surface.addEventListener('pointermove',e=>{if(!finePointer.matches||reduced.matches)return;const r=surface.getBoundingClientRect();target={x:clamp((e.clientX-r.left)/r.width,0,1),y:clamp((e.clientY-r.top)/r.height,0,1)};active=true;start();});
+    const start=()=>{if(!frame&&visible&&enabled)frame=requestAnimationFrame(paint);};
+    surface.addEventListener('pointermove',e=>{if(!enabled||!finePointer.matches||reduced.matches||e.pointerType==='touch')return;const r=surface.getBoundingClientRect();target={x:clamp((e.clientX-r.left)/r.width,0,1),y:clamp((e.clientY-r.top)/r.height,0,1)};active=true;start();});
     surface.addEventListener('pointerleave',()=>{active=false;start();});
-    surface.closest('a').addEventListener('focus',()=>{if(reduced.matches)return;target={x:.5,y:.5};active=true;start();});
+    surface.addEventListener('pointercancel',resetEffect);
+    surface.closest('a').addEventListener('focus',()=>{if(!finePointer.matches||reduced.matches)return;target={x:.5,y:.5};active=true;start();});
     surface.closest('a').addEventListener('blur',()=>{active=false;start();});
     new ResizeObserver(resize).observe(surface);
-    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible){cancelAnimationFrame(frame);frame=0;active=false;alpha=0;}else start();},{rootMargin:'80px'}).observe(surface);
-    canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(frame);canvas.style.opacity='0';});
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible)resetEffect();},{rootMargin:'80px'}).observe(surface);
+    window.addEventListener('blur',resetEffect);
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)resetEffect();});
+    reduced.addEventListener('change',resetEffect);finePointer.addEventListener('change',resetEffect);
+    canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();enabled=false;resetEffect();});
     resize();
   }
   document.querySelectorAll('[data-dither]').forEach(surface=>{const img=surface.querySelector('img');if(img.complete&&img.naturalWidth)ditherEffect(surface);else img.addEventListener('load',()=>ditherEffect(surface),{once:true});});

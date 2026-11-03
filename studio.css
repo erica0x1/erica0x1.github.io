@@ -39,6 +39,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .studio-project a:hover .studio-project-image img{transform:scale(1.018)}.studio-project-image.sleepwalk-image img{object-fit:cover}.dither-layer{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:normal}
 .project-open{position:absolute;bottom:14px;right:15px;width:35px;height:35px;display:grid;place-items:center;background:#f4f2ebee;color:#354032;border-radius:50%;font-size:19px;z-index:2;transform:translateY(7px);opacity:0;transition:transform .4s var(--ease-out),opacity .3s}
 .studio-project-image[data-dither] img,.studio-project a:hover .studio-project-image[data-dither] img{transform:none;-webkit-user-drag:none}
+.dither-layer{opacity:0}
 .studio-project a:hover .project-open,.studio-project a:focus-visible .project-open{transform:translateY(0);opacity:1}
 .studio-project-caption{padding-top:13px}.studio-project-caption h3{font:400 29px/1.2 var(--serif);letter-spacing:-.025em;margin:0 0 4px}.studio-project-caption p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.studio-feature .studio-project-caption h3{font-size:34px}
 .all-games-action{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:35px;padding:8px 0}

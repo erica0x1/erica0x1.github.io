@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dither compositing regression checks</title><link rel="stylesheet" href="../studio.css?v=4">
+<style>body{padding:24px;max-width:1000px;margin:auto}h1{font:32px Georgia}button{padding:12px 20px}#fixtures{display:flex;gap:20px;margin:20px 0}#fixtures a{display:block;width:160px}#fixtures .studio-project-image{height:100px;aspect-ratio:auto}#results{white-space:pre-wrap;font:14px/1.6 monospace}.pass{color:#276237}.fail{color:#a13330}</style>
+<script src="../studio.js?v=4" defer></script></head><body>
+<h1>Dither compositing regression checks</h1>
+<p>Exercises the production shader and production pointer lifecycle. No mock WebGL renderer.</p>
+<button id="run" type="button">Run regression checks</button>
+<div id="fixtures">
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/line-by-line-cover.webp" alt="Line by Line"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/sleepwalk-cover.webp" alt="Sleepwalk"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/to-rei-cover.webp" alt="To Rei"><canvas class="dither-layer"></canvas></div></a>
+</div><pre id="results" role="status">Ready.</pre>
+<script type="module">
+const output=document.querySelector('#results'),button=document.querySelector('#run');
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const waitFor=async(test,label)=>{const end=performance.now()+3500;while(!test()){if(performance.now()>end)throw new Error(label);await sleep(25);}};
+const assert=(condition,message)=>{if(!condition)throw new Error(message);};
+button.addEventListener('click',async()=>{
+  button.disabled=true;output.textContent='';let passed=0;
+  const log=message=>{output.textContent+=message+'\n';};
+  const check=async(name,fn)=>{await fn();passed++;log('PASS '+name);};
+  try{
+    const source=await(await fetch('../studio.js?v=4')).text();
+    const vertex=source.match(/const vertexSource=`([\s\S]*?)`;/)[1];
+    const fragment=source.match(/const fragmentSource=`([\s\S]*?)`;/)[1];
+    function pixels(width,height,reveal,mediump=false,legacy=false){
+      const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+      const gl=canvas.getContext('webgl',{alpha:true,premultipliedAlpha:true,antialias:false,depth:false,stencil:false});
+      assert(gl,'WebGL is unavailable in this test browser');
+      const compile=(type,text)=>{const shader=gl.createShader(type);gl.shaderSource(shader,text);gl.compileShader(shader);assert(gl.getShaderParameter(shader,gl.COMPILE_STATUS),gl.getShaderInfoLog(shader));return shader;};
+      let fs=mediump?fragment.replace(/#ifdef GL_FRAGMENT_PRECISION_HIGH[\s\S]*?#endif/,'precision mediump float;'):fragment;
+      // Negative control: reproduce the old idle output, RGB ink with zero alpha.
+      if(legacy)fs='precision mediump float; void main(){gl_FragColor=vec4(.97,.96,.91,0.);}';
+      const vs=compile(gl.VERTEX_SHADER,vertex),ps=compile(gl.FRAGMENT_SHADER,fs),program=gl.createProgram();
+      gl.attachShader(program,vs);gl.attachShader(program,ps);gl.linkProgram(program);assert(gl.getProgramParameter(program,gl.LINK_STATUS),gl.getProgramInfoLog(program));gl.useProgram(program);
+      const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+      const pos=gl.getAttribLocation(program,'a_position');gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+      const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+      gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array([150,150,150,255]));
+      const u=name=>gl.getUniformLocation(program,'u_'+name);
+      gl.uniform1i(u('image'),0);gl.uniform2f(u('imageSize'),1,1);gl.uniform2f(u('resolution'),width,height);gl.uniform2f(u('mouse'),.5,.5);gl.uniform1f(u('reveal'),reveal);gl.uniform1f(u('radius'),150);gl.uniform1f(u('pixel'),2.5);
+      gl.viewport(0,0,width,height);gl.drawArrays(gl.TRIANGLES,0,6);
+      const data=new Uint8Array(width*height*4);gl.readPixels(0,0,width,height,gl.RGBA,gl.UNSIGNED_BYTE,data);assert(gl.getError()===gl.NO_ERROR,'WebGL render/read failed');
+      gl.deleteTexture(texture);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vs);gl.deleteShader(ps);gl.getExtension('WEBGL_lose_context')?.loseContext();
+      return data;
+    }
+    await check('negative control detects the old transparent-RGB leak',()=>{const data=pixels(32,32,0,false,true);assert(data[0]>0&&data[3]===0,'Negative control did not reproduce the leak');});
+    for(const [w,h] of [[618,573],[1236,1146],[1400,1000]]){
+      await check(`idle RGBA is entirely zero at ${w}×${h}`,()=>assert(pixels(w,h,0).every(v=>v===0),'Idle shader emitted visible color data'));
+      await check(`brush stays local and premultiplied at ${w}×${h}`,()=>{
+        const data=pixels(w,h,.5);let visible=0;
+        for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+          const i=(y*w+x)*4,a=data[i+3];
+          assert(data[i]<=a+1&&data[i+1]<=a+1&&data[i+2]<=a+1,'RGB exceeds alpha');
+          if(Math.hypot(x+.5-w/2,y+.5-h/2)>164)assert(data[i]===0&&data[i+1]===0&&data[i+2]===0&&a===0,'Color escaped the brush boundary');
+          if(a)visible++;
+        }
+        assert(visible>1000&&visible<w*h*.25,'Brush did not render as a local patch');
+      });
+    }
+    await check('mediump fallback remains transparent outside a high-DPI brush',()=>{const data=pixels(1400,1000,1,true);assert(data[0]===0&&data[3]===0,'Mediump corner is not transparent');assert(data[((500*1400)+700)*4+3]>240,'Mediump brush center missing');});
+    const surfaces=[...document.querySelectorAll('[data-dither]')];
+    await waitFor(()=>surfaces.every(s=>s.dataset.effect),'Effects did not initialize');
+    await check('all three production overlays are hidden before interaction',()=>assert(surfaces.every(s=>getComputedStyle(s.querySelector('canvas')).opacity==='0'),'An idle overlay is visible'));
+    for(let i=0;i<surfaces.length;i++){
+      const surface=surfaces[i],canvas=surface.querySelector('canvas');
+      const move=()=>{const r=surface.getBoundingClientRect();surface.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,pointerType:'mouse',clientX:r.left+r.width/2,clientY:r.top+r.height/2}));};
+      await check(`card ${i+1}: activates inside a CSS circle, then fades completely`,async()=>{
+        move();await waitFor(()=>canvas.style.opacity==='1','Hover never appeared');
+        assert(canvas.style.clipPath.startsWith('circle('),'Missing independent CSS clipping');
+        surface.dispatchEvent(new PointerEvent('pointerleave',{pointerType:'mouse'}));await waitFor(()=>canvas.style.opacity==='0','Overlay remained after pointer leave');
+      });
+      await check(`card ${i+1}: window blur immediately hides the overlay`,async()=>{move();await waitFor(()=>canvas.style.opacity==='1','Hover never appeared');window.dispatchEvent(new Event('blur'));assert(canvas.style.opacity==='0','Blur left stale overlay');});
+    }
+    await check('context loss falls back to unobstructed original artwork',async()=>{
+      const s=surfaces[0],canvas=s.querySelector('canvas'),r=s.getBoundingClientRect();s.dispatchEvent(new PointerEvent('pointermove',{pointerType:'mouse',clientX:r.left+40,clientY:r.top+40}));
+      await waitFor(()=>canvas.style.opacity==='1','Hover never appeared');
+      const extension=canvas.getContext('webgl')?.getExtension('WEBGL_lose_context');assert(extension,'Context-loss test extension unavailable');extension.loseContext();
+      await waitFor(()=>canvas.style.opacity==='0','Lost context left the overlay visible');
+    });
+    output.className='pass';log(`\n${passed} checks passed.`);
+  }catch(error){output.className='fail';log('FAIL '+error.message);}finally{button.disabled=false;}
+});
+</script></body></html>

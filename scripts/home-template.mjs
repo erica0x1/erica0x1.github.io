@@ -41,6 +41,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify ↗</a></section>
-<script src="studio.js" defer></script>
+<script src="studio.js?v=4" defer></script>
 ${tail('')}`;
 }
