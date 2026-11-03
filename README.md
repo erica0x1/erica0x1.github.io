@@ -22,6 +22,7 @@ node scripts/serve.mjs
 - studio.js：黑板绘画、三张作品的颗粒鼠标效果、信封展开、摸猫与 Spotify。
 - assets/images/：经过压缩的原有展示素材。
 - assets/studio/：新制作的像素猫、粉笔、黑板擦；生成记录见该目录 README.md。
+- favicon.svg：奶油底、松针绿 e 与酒红色小点的新标志。已提供 ICO、32px PNG 和 180px Apple 主屏幕图标；修改形状后可用 scripts/build-icons.py 重新导出（需要 Pillow）。
 
 修改项目数据或模板后运行：
 
