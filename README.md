@@ -4,7 +4,7 @@
 
 ## 打开预览
 
-直接用浏览器打开 index.html，或在此文件夹运行：
+在此文件夹运行本地预览（粉笔与 WebGL 效果建议通过这个地址查看）：
 
 ```sh
 node scripts/serve.mjs
@@ -15,10 +15,13 @@ node scripts/serve.mjs
 ## 修改内容
 
 - content/projects.json：项目介绍、角色、链接、图库。
-- scripts/build.mjs：首页与项目页模板。
-- styles.css：桌面与手机样式。
-- app.js：分类筛选、图片放大、结尾图的剧透保护。
+- scripts/build.mjs：页面生成与项目页模板。
+- scripts/home-template.mjs：黑板首页、精选作品、个人介绍与桌宠。
+- styles.css：基础与项目页样式；studio.css：新版纸张、黑板、桌宠与手机样式。
+- app.js：项目图片放大与结尾图的剧透保护。
+- studio.js：黑板绘画、三张作品的颗粒鼠标效果、信封展开、摸猫与 Spotify。
 - assets/images/：经过压缩的原有展示素材。
+- assets/studio/：新制作的像素猫、粉笔、黑板擦；生成记录见该目录 README.md。
 
 修改项目数据或模板后运行：
 
@@ -44,3 +47,15 @@ node scripts/build.mjs
 - Line by Line 概述参考其创意总监的公开介绍：https://mfzhou.carrd.co/
 
 开发截图和 Last Call 早期印刷样张均有版本说明，不作为最新完成版本的证明。
+
+## 新版交互
+
+- 默认展示 Line by Line、Sleepwalk、To Rei，点击 View all 9 games 展开其余六个游戏。
+- 点击或拖动粉笔 / 黑板擦，然后在黑板上按住拖动；restore the board 恢复，Esc 放下工具。
+- 三张精选图都有局部 WebGL Bayer 颗粒效果；不支持 WebGL 时使用 Canvas 降级。手机正常展示原图。
+- 个人介绍从信封展开为照片、信件、笔记；窄屏按实际纸张高度依次排列。
+- 灰白猫和 studio radio 固定在首页右下角，猫有眨眼、被摸与睡觉状态。
+- Spotify 使用 Erica 提供的歌单，点开才加载，不自动播放。当前预览环境显示试听；完整播放由 Spotify 的访问条件决定。
+- 尊重系统的减少动态效果设置；折叠内容不进入键盘焦点顺序。
+
+2026-11-03 验证：11 个页面与 301 个本地引用检查通过；实际操作过粉笔绘画、擦除、恢复、全部游戏展开、信封开关、摸猫、Spotify 加载及项目图库；检查桌面、390px 和 320px 窄屏。
