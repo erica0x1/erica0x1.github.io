@@ -33,7 +33,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .board-foot{display:flex;justify-content:flex-end;align-items:center;gap:20px;padding:23px 3px 0;font:13px var(--hand);color:var(--muted)}
 .quiet-button{background:none;color:var(--ink);padding:4px 0;border:0;font:12px var(--sans);position:relative}.quiet-button:after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out)}.quiet-button:hover:after{transform:scaleX(1)}.board-foot .quiet-button{color:var(--muted);font-size:11px}
 .selected-work{padding-top:86px;padding-bottom:18px}
-.studio-section-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px}
+.studio-section-heading{display:flex;justify-content:flex-start;align-items:center;gap:28px;margin-bottom:28px}
 .studio-section-heading h2{font-size:14px;font-weight:400;margin:0;letter-spacing:.03em}.studio-section-heading>span{font-size:11px;color:var(--muted)}
 .selected-grid{display:grid;grid-template-columns:1.24fr 1fr;gap:26px 36px;align-items:start}.studio-project{min-width:0}.studio-feature{grid-row:span 2}
 .studio-project-image{position:relative;background:#e5e0d5;overflow:hidden;border-radius:3px;aspect-ratio:2.1;isolation:isolate}
