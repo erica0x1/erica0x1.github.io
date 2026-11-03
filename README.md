@@ -34,9 +34,12 @@ node scripts/build.mjs
 
 仓库：https://github.com/erica0x1/portfolio
 
-网站使用相对路径，可用于 GitHub Pages 的 /portfolio/ 项目地址。
-上传文件与开启 GitHub Pages 是两步；当前初版以本地预览为准。
-通过 GitHub Desktop 保存并 Push origin 上传更新。
+公开网站：https://erica0x1.github.io/portfolio/
+
+2026-11-03 已按 Erica 的要求将仓库设为 Public，并开启 GitHub Pages。
+发布来源为 main 分支的根目录；以后通过 GitHub Desktop 保存并 Push origin，GitHub 会自动更新公开网站。
+修改项目数据或页面模板后，先运行上面的 build 命令，再提交生成的页面。
+手机和其他电脑直接打开公开链接即可，不依赖本机预览服务。
 
 待补充内容见 CONTENT_CHECKLIST.md。
 
