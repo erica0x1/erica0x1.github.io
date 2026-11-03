@@ -5,7 +5,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   return `${head('Erica Lin — Games & little worlds','Games, spaces, and interactive stories by Erica Lin. Game and level design at USC.').replace('<body>','<body class="studio-home">')}${header()}
 <main id="main">
   <section class="studio-hero wrap" aria-labelledby="hero-title">
-    <div class="blackboard-frame">
+    <div class="blackboard-frame"><img class="holiday-ornaments" src="assets/studio/holiday-ornaments.svg" alt="" aria-hidden="true" draggable="false">
       <div class="blackboard" data-blackboard>
         <div class="board-copy"><h1 id="hero-title">Erica Lin.</h1><p>Game & level designer at USC.<br>Spaces to explore.<br>Stories to piece together.</p></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
@@ -29,13 +29,13 @@ export function renderHome({projects,esc,image,head,header,tail}) {
         <article class="personal-paper letter-paper" style="--paper-i:1;--paper-rotation:2deg"><p class="paper-date">a note from my desk</p><h3>Hello, you.</h3><p>I’m Erica, a game designer and developer at USC.</p><p>I make spaces to explore, systems to figure out, and stories to piece together.</p><p>I’m drawn to that little moment when a place, a rule, or a relationship starts to make sense.</p><span class="paper-signature">erica</span></article>
         <article class="personal-paper notebook-paper" style="--paper-i:2;--paper-rotation:5deg"><span class="paper-small">things on my worktable</span><h3>Always making.</h3><p>Spatial puzzles.<br>Quiet little stories.<br>Theatre layouts.<br>Games around a table.</p><div class="notebook-tags"><span>level design</span><span>game design</span><span>Unity</span><span>prototyping</span></div><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">find my games on itch.io ↗</a></article>
       </div>
-      <button class="paper-envelope" type="button" data-toggle-about aria-label="Open Erica's personal folder" aria-controls="personal-papers" aria-expanded="false"><span class="envelope-back"></span><span class="envelope-flap"></span><span class="envelope-front"><span class="envelope-stamp" aria-hidden="true">e.</span><span class="envelope-address">a little more me.</span><span class="envelope-subtitle">photos, notes & other little things</span></span></button>
+      <button class="paper-envelope" type="button" data-toggle-about aria-label="Open Erica's personal folder" aria-controls="personal-papers" aria-expanded="false"><span class="envelope-back"></span><span class="envelope-flap"></span><span class="envelope-front"><span class="envelope-stamp" aria-hidden="true"><img src="assets/studio/holly-stamp.svg" alt="" draggable="false"></span><span class="envelope-address">a little more me.</span><span class="envelope-subtitle">photos, notes & other little things</span></span></button>
       <span class="envelope-caption handwritten" data-envelope-caption>there's a person behind the pixels.</span>
     </div>
   </section>
   <section class="studio-contact wrap" id="contact"><div><p class="studio-kicker">say hello</p><h2>Let’s make<br><em>something playful.</em></h2></div><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
 </main>
-<aside class="desk-companions" aria-label="Your little studio companions">
+<aside class="desk-companions" aria-label="Your little studio companions"><img class="cat-present" src="assets/studio/pixel-present.svg" alt="" aria-hidden="true" draggable="false">
   <div class="pet-bubble" role="status" aria-live="polite" data-pet-bubble>psst… pet me?</div>
   <button class="desktop-cat" type="button" aria-label="Pet the little gray cat" data-pet-cat><span class="cat-sprites"><img class="cat-frame cat-idle" src="assets/studio/cat-idle.webp" alt="A small gray and white pixel kitten" draggable="false"><img class="cat-frame cat-blink" src="assets/studio/cat-blink.webp" alt="" draggable="false"><img class="cat-frame cat-pet" src="assets/studio/cat-pet.webp" alt="" draggable="false"><img class="cat-frame cat-sleep" src="assets/studio/cat-sleep.webp" alt="" draggable="false"></span><span class="pet-heart" aria-hidden="true">♡</span></button>
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>

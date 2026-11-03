@@ -1,6 +1,6 @@
 # Studio assets — 2026-11-03
 
-Generated with the built-in imagegen tool, with transparent backgrounds. No external API key or fallback CLI was used. Original game artwork and Erica's portrait remain unchanged in `../images/`.
+The cat, chalk and eraser were generated with the built-in imagegen tool, with transparent backgrounds. No external API key or fallback CLI was used. Original game artwork and Erica's portrait remain unchanged in `../images/`.
 
 ## Final files
 
@@ -17,3 +17,7 @@ Original generated PNGs are retained alongside the web assets. Alpha trimming, c
 3. **White chalk / product-mockup.** One isolated off-white piece of classroom chalk, resting horizontally with a slight natural tilt. Powdery matte surface, subtly worn ends, rounded cylindrical form and realistic chalk texture. Soft studio lighting, transparent background, no packaging, text, surrounding scene or watermark.
 
 These are original generated assets guided by the user's references; no Framer template asset was extracted or bundled.
+
+## Small Christmas accents
+
+`holiday-ornaments.svg`, `holly-stamp.svg` and `pixel-present.svg` are original code-authored vector decorations, added for Erica's love of Christmas and her long-standing red-and-green hair palette. Their palette uses muted berry red, pine green and cream. The ornaments sit outside the chalk drawing layer; decorative images do not intercept pointer input or add screen-reader noise. The corner sway is disabled with reduced motion. Red-and-green paper tape and small interface accents are defined in `studio.css`.
