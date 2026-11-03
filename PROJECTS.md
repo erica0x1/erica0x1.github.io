@@ -1,34 +1,16 @@
-# Portfolio 项目清单
+# 已收录的项目
 
-## 旧网站项目
+| 项目 | 网页中的角色 | 项目身份 |
+| --- | --- | --- |
+| To Rei | Narrative & interaction design | Investigator |
+| Dear Little Alice | Game & level design | Traveller |
+| Sleepwalk | Game & level design | Dreamer |
+| Line by Line | Level Designer | USC AGP 团队项目 |
+| Last Call | Producer | 合作桌游，团队项目 |
+| Spatial Tinting | Designer & Programmer | 独立项目，7 周 |
+| Melodic Function | System & Visual Design | 独立项目，10 周 |
+| Dismember | Gameplay Programming & Systems | 4 人团队，72 小时 |
+| Makeup Class | Gameplay & Visual Design | 独立项目，20 周 |
 
-以下来自现有 Wix 网站。是否保留、排序和精选状态待确定。
-
-| 项目 | 个人职责 | 素材与链接 | 是否精选 |
-| --- | --- | --- | --- |
-| Spatial Tinting | Designer & Programmer；独立项目，7 周 | https://ericalin.itch.io/spatial-tinting | 待定 |
-| Melodic Function | 待补充 | 待补充 | 待定 |
-| Dismember | 待补充 | 待补充 | 待定 |
-| Makeup Class | 待补充 | 待补充 | 待定 |
-
-## USC 新项目
-
-先补名字和职责即可，其他信息可以之后整理。
-
-| 项目 | 一句话玩法 | 个人职责 | 制作时间 / 团队规模 | 当前状态 | 试玩链接 |
-| --- | --- | --- | --- | --- | --- |
-| 待添加 | | | | | |
-
-## 单个项目的素材清单
-
-- 项目名称与一句话介绍。
-- 个人职责、团队规模、制作时间。
-- 一张封面、3–5 张截图或 GIF、一段实机视频（按项目情况准备）。
-- 试玩或下载链接（如有）。
-- 一个具体设计问题、你采取的改动，以及实际观察到的结果。
-- 团队署名和需要保留的素材署名。
-
-## 首页筛选
-
-候选项目整理后，再选出 4–6 个最能展示个人能力的作品。
-旧作品和 USC 新作品一起比较，不预设所有新作品都要放首页。
+所有项目已有独立介绍页、个人贡献、设计说明和图库。
+三个课程作品的英文角色为根据讨论整理的概括，可按实际正式署名调整。

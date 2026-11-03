@@ -1,0 +1,460 @@
+[
+  {
+    "slug": "to-rei",
+    "title": "To Rei",
+    "category": "digital",
+    "eyebrow": "USC / Investigator",
+    "type": "Narrative exploration",
+    "role": "Narrative & interaction design",
+    "context": "Investigator project",
+    "platform": "Desktop browser · Unity",
+    "cover": "to-rei-cover",
+    "coverAlt": "To Rei title artwork: a letter and matching keychains beside a swimming pool.",
+    "summary": "Fifteen years of letters. One summer left to remember.",
+    "intro": "A short point-and-click story about memory, friendship, and words left unanswered. Explore a quiet hospital room and a sunlit swimming pool, examining letters, photographs, and objects to piece together a summer Haru cannot fully remember.",
+    "links": [
+      {
+        "label": "Play on itch.io",
+        "url": "https://ericalin.itch.io/to-rei"
+      }
+    ],
+    "contributions": [
+      "Built an object-led investigation across the hospital room and swimming pool.",
+      "Connected inspectable clues with an evidence collection interface so players can revisit what they find.",
+      "Shaped the transition from clicking through evidence to a final tactile interaction."
+    ],
+    "sections": [
+      {
+        "title": "A story told through what remains",
+        "body": "Letters, photographs, and familiar objects invite the player to reconstruct a relationship. The two environments offer different emotional perspectives on the same summer, allowing the story to unfold through observation."
+      },
+      {
+        "title": "Teaching a different kind of interaction",
+        "body": "Most of the game is played by clicking. When a later interaction asks the player to drag objects together, a brief contextual hint introduces the change without interrupting the scene."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "to-rei-hospital",
+        "caption": "Hospital room environment artwork."
+      },
+      {
+        "image": "to-rei-pool",
+        "caption": "Swimming pool environment artwork."
+      },
+      {
+        "image": "to-rei-ending",
+        "caption": "Ending artwork — story spoilers.",
+        "spoiler": true
+      }
+    ],
+    "year": "2026",
+    "source": "https://ericalin.itch.io/to-rei"
+  },
+  {
+    "slug": "sleepwalk",
+    "title": "Sleepwalk",
+    "category": "digital",
+    "eyebrow": "USC / Dreamer",
+    "type": "Spatial puzzle",
+    "role": "Game & level design",
+    "context": "Dreamer project",
+    "platform": "PC · Unity",
+    "cover": "sleepwalk-cover",
+    "coverAlt": "Two mirrored characters navigate a monochrome path of circles and crescents in Sleepwalk.",
+    "summary": "Find a shared path through reflection, inversion, and shifting perspectives.",
+    "intro": "A spatial puzzle project built around paired characters and changing geometry. Paths are made from simple graphic forms, but moving through them depends on understanding how the two sides of a space relate to one another.",
+    "links": [],
+    "contributions": [
+      "Developed spatial puzzles around paired movement, supported surfaces, and reversible transformations.",
+      "Iterated on goals and interaction feedback through playtesting.",
+      "Worked on endings that transform the completed level geometry into a final composition."
+    ],
+    "sections": [
+      {
+        "title": "The surface is the interaction",
+        "body": "In the Rolling Girl level, both characters must stand on eligible paired surfaces before those surfaces can turn. The same shapes are both the route and the mechanism, making position part of every decision."
+      },
+      {
+        "title": "Feedback without giving away the route",
+        "body": "An occupied turning face gently darkens. An unavailable action makes the occupied surfaces briefly shake. These responses communicate what the space allows while leaving the sequence for the player to discover."
+      },
+      {
+        "title": "A level becomes an image",
+        "body": "The ending begins with the completed map. Its existing circles and crescents rotate and rearrange into a final illustration, connecting the puzzle's physical structure with its visual payoff."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "sleepwalk-cover",
+        "caption": "Rolling Girl level — development view, November 2026."
+      },
+      {
+        "image": "sleepwalk-overhead",
+        "caption": "The completed map seen from above."
+      },
+      {
+        "image": "sleepwalk-finale",
+        "caption": "Level geometry becomes the ending composition.",
+        "spoiler": true
+      }
+    ],
+    "year": "2026"
+  },
+  {
+    "slug": "dear-little-alice",
+    "title": "Dear Little Alice",
+    "category": "digital",
+    "eyebrow": "USC / Traveller",
+    "type": "First-person exploration",
+    "role": "Game & level design",
+    "context": "Traveller project",
+    "platform": "PC · Unity",
+    "cover": "alice-cover",
+    "coverAlt": "Dear Little Alice title screen, with red lettering against a black background.",
+    "summary": "A small doorway. A changing sense of scale. An exit that asks you to look again.",
+    "intro": "A surreal first-person exploration game that uses scale, navigation, and shifting environmental meaning. An uncanny forest leads toward a small doorway; shrinking changes what the player can access and how the surrounding space feels.",
+    "links": [],
+    "contributions": [
+      "Developed the forest-to-maze exploration sequence and the change of scale at the doorway.",
+      "Iterated on environmental guidance, route access, and the readability of the drink interaction.",
+      "Connected the false exit, paper mechanism, and storybook reveal into a continuous ending."
+    ],
+    "sections": [
+      {
+        "title": "Scale changes access",
+        "body": "The player first encounters the maze doorway at normal size, then finds a bottle nearby. Shrinking happens in place, letting the same physical entrance become a route the player can pass through."
+      },
+      {
+        "title": "Guidance that can be questioned",
+        "body": "The forest offers familiar visual cues alongside another route. After a loop, new cues appear while the earlier route remains visible, encouraging the player to reconsider what they have been following."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "alice-entrance",
+        "caption": "Approaching the maze at normal size — October 2026 development capture."
+      },
+      {
+        "image": "alice-bottle",
+        "caption": "The bottle beside the small entrance."
+      },
+      {
+        "image": "alice-maze",
+        "caption": "Navigating the maze after shrinking."
+      },
+      {
+        "image": "alice-storybook",
+        "caption": "The storybook reveal reframes the journey.",
+        "spoiler": true
+      }
+    ],
+    "year": "2026"
+  },
+  {
+    "slug": "line-by-line",
+    "title": "Line by Line",
+    "category": "digital",
+    "eyebrow": "USC / Advanced Games Project",
+    "type": "Detective adventure",
+    "role": "Level Designer",
+    "context": "AGP · Team project",
+    "platform": "PC · Unity",
+    "cover": "line-by-line-cover",
+    "coverAlt": "Development view of a theatre catwalk, control booth, and seating in Line by Line.",
+    "summary": "Designing readable spaces for a detective story solved through crosswords.",
+    "intro": "Line by Line is a USC Advanced Games Project: a third-person detective game in which clues and conversations feed into crossword-based deductions. I contribute as a level designer, working on the theatre's spaces, navigation, clue placement, and camera framing.",
+    "links": [],
+    "contributions": [
+      "Iterated on the balcony and control-room layout, including the relationship between adjoining spaces.",
+      "Adjusted prop and clue placement to improve visibility and click access.",
+      "Worked on camera framing and transitions across theatre areas.",
+      "Checked walkable routes and barriers while collaborating through Perforce."
+    ],
+    "sections": [
+      {
+        "title": "Making clues reachable and readable",
+        "body": "In a click-to-move investigation, a clue needs both a visible position and a usable approach. Layout work included repositioning a bag clue and checking how props, boundaries, and camera angles affect interaction."
+      },
+      {
+        "title": "Connecting the theatre",
+        "body": "The balcony, control booth, and seating areas need to read as connected spaces. My work explored room boundaries, camera transitions, and the arrangement of existing props within the team's level structure."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "line-by-line-layout",
+        "caption": "Theatre layout study — October 2026 development capture."
+      },
+      {
+        "image": "line-by-line-booth",
+        "caption": "Control-booth approach and framing study — October 2026."
+      },
+      {
+        "image": "line-by-line-catwalk",
+        "caption": "Catwalk camera study — October 2026."
+      }
+    ],
+    "note": "Images show development studies from October 2026, rather than the latest team build.",
+    "year": "2026"
+  },
+  {
+    "slug": "last-call",
+    "title": "Last Call",
+    "category": "tabletop",
+    "eyebrow": "USC / Meaningful Play",
+    "type": "Cooperative board game",
+    "role": "Producer",
+    "context": "Team project · Four-player game",
+    "platform": "Physical / Printed",
+    "cover": "last-call-prototype-01",
+    "coverAlt": "Last Call's early print-and-play action cards, including Serve Drink, Serve Water, and Calm.",
+    "summary": "Run the bar together. Balance the night's revenue with getting everyone home safely.",
+    "intro": "A cooperative tabletop game about running a busy bar. Players take on the bartender, server, bouncer, and manager roles, coordinating actions while balancing revenue, customer intoxication, chaos, and safety.",
+    "links": [],
+    "contributions": [
+      "Coordinated weekly tasks, responsibilities, and project deliverables as producer.",
+      "Organized task tracking and supported communication across design, art, and playtesting.",
+      "Helped bring the team's design process and takeaways into the final presentation."
+    ],
+    "sections": [
+      {
+        "title": "Profit has consequences",
+        "body": "Serving another drink can help the team earn money, but it also creates future demands on their limited actions. The intended tension comes from making customer safety part of the same decisions that keep the bar running."
+      },
+      {
+        "title": "Coordination is part of the game",
+        "body": "Players plan actions with different role abilities and resolve them in sequence. An action can change the situation before a teammate gets to act, making communication and timing central to the experience."
+      },
+      {
+        "title": "Keeping the team in sync",
+        "body": "A rule change affects the cards, rulebook, and next playtest. My production work focused on making responsibilities and updates visible so those pieces could move together."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "last-call-prototype-01",
+        "caption": "Early print-and-play prototype — action cards, October 15, 2026."
+      },
+      {
+        "image": "last-call-prototype-02",
+        "caption": "Early prototype — server and bouncer actions."
+      },
+      {
+        "image": "last-call-prototype-03",
+        "caption": "Early prototype — manager actions."
+      },
+      {
+        "image": "last-call-prototype-04",
+        "caption": "Early prototype — night events and drink reference cards."
+      }
+    ],
+    "note": "The images document an early print-and-play prototype; later presentation notes describe further iterations.",
+    "year": "2026"
+  },
+  {
+    "slug": "spatial-tinting",
+    "title": "Spatial Tinting",
+    "category": "digital",
+    "eyebrow": "Independent work",
+    "type": "Spatial-logic puzzle",
+    "role": "Designer & Programmer",
+    "context": "Solo project · 7 weeks",
+    "platform": "Digital / PC",
+    "cover": "spatial-cover",
+    "coverAlt": "Spatial Tinting's pastel cube and color-matching interface.",
+    "summary": "See through color. Read the structure. Find the rule.",
+    "intro": "A spatial-logic puzzle that turns color perception into a deductive, perspective-driven game system. Players interpret how colored faces and structure relate, using observation as part of the puzzle-solving process.",
+    "links": [
+      {
+        "label": "Play on itch.io",
+        "url": "https://ericalin.itch.io/spatial-tinting"
+      }
+    ],
+    "contributions": [
+      "Designed and programmed the project over seven weeks.",
+      "Developed the relationship between color perception, spatial structure, and puzzle logic."
+    ],
+    "sections": [
+      {
+        "title": "Color as a rule",
+        "body": "The project explores how the same structure can be understood differently through color and perspective. The original design boards below document the inspirations, level design, and development process."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "spatial-tinting-1",
+        "caption": "Project overview."
+      },
+      {
+        "image": "spatial-tinting-2",
+        "caption": "Inspiration and references."
+      },
+      {
+        "image": "spatial-tinting-3",
+        "caption": "Level design."
+      },
+      {
+        "image": "spatial-tinting-4",
+        "caption": "Design documentation."
+      },
+      {
+        "image": "spatial-tinting-5",
+        "caption": "Design documentation."
+      },
+      {
+        "image": "spatial-tinting-6",
+        "caption": "Development process."
+      },
+      {
+        "image": "spatial-tinting-7",
+        "caption": "Project documentation."
+      }
+    ],
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/spatial-tinting"
+  },
+  {
+    "slug": "melodic-function",
+    "title": "Melodic Function",
+    "category": "digital",
+    "eyebrow": "Independent work",
+    "type": "Music & logic puzzle",
+    "role": "System & Visual Design",
+    "context": "Solo project · 10 weeks",
+    "platform": "Digital / PC",
+    "cover": "melodic-cover",
+    "coverAlt": "A hand-drawn eye contains a mathematical wave, with function controls below.",
+    "summary": "In this world, music obeys math.",
+    "intro": "A rule-based music puzzle where mathematical functions become melodies players restore through interactive reasoning. The project brings musical patterns, mathematical curves, and a hand-drawn visual language into the same puzzle system.",
+    "links": [
+      {
+        "label": "Play on itch.io",
+        "url": "https://ericalin.itch.io/melodic-function"
+      }
+    ],
+    "contributions": [
+      "Created the system and visual design over ten weeks.",
+      "Explored the relationship between mathematical functions and musical patterns."
+    ],
+    "sections": [
+      {
+        "title": "Reasoning through sound and shape",
+        "body": "Functions provide a visual structure for musical information. The player works with that structure to understand and restore a melody; the design boards below document the original project."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "melodic-function-1",
+        "caption": "Project overview."
+      },
+      {
+        "image": "melodic-function-2",
+        "caption": "Original design documentation — 2."
+      },
+      {
+        "image": "melodic-function-3",
+        "caption": "Original design documentation — 3."
+      },
+      {
+        "image": "melodic-function-4",
+        "caption": "Original design documentation — 4."
+      },
+      {
+        "image": "melodic-function-5",
+        "caption": "Original design documentation — 5."
+      }
+    ],
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/melodic-function"
+  },
+  {
+    "slug": "dismember",
+    "title": "Dismember",
+    "category": "digital",
+    "eyebrow": "Team / Game jam",
+    "type": "Narrative survival",
+    "role": "Gameplay Programming & Systems",
+    "context": "Team of 4 · 72 hours",
+    "platform": "Digital / PC",
+    "cover": "dismember-cover",
+    "coverAlt": "Dismember title art and its character against a city backdrop.",
+    "summary": "A survival system where the body becomes a resource.",
+    "intro": "A narrative survival system built around limb-based stats, durability, and gig-economy decision loops. Created by a four-person team over 72 hours.",
+    "links": [
+      {
+        "label": "View on itch.io",
+        "url": "https://ericalin.itch.io/dismember"
+      }
+    ],
+    "contributions": [
+      "Contributed gameplay programming and systems implementation within a four-person jam team.",
+      "Worked on the systems connecting body-part statistics, durability, and survival decisions."
+    ],
+    "sections": [
+      {
+        "title": "Survival through systems",
+        "body": "The body is part of the game's resource economy. The original project board documents the concept, display, systems, and programming work behind the prototype."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "dismember-1",
+        "caption": "Original project board — concept, systems, display, and programming."
+      }
+    ],
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/dismember"
+  },
+  {
+    "slug": "makeup-class",
+    "title": "Makeup Class",
+    "category": "tabletop",
+    "eyebrow": "Independent work",
+    "type": "Critical board game",
+    "role": "Gameplay & Visual Design",
+    "context": "Solo project · 20 weeks",
+    "platform": "Physical / Printed",
+    "cover": "makeup-cover",
+    "coverAlt": "The physical Makeup Class game, with a makeup-palette board, cards, and game pieces.",
+    "summary": "Beauty training becomes a system of pressure, comparison, and constrained choices.",
+    "intro": "A turn-based board game that exposes how beauty training becomes a system of resource pressure, comparison, and constrained agency. The physical game connects its theme with the materials and routines of play.",
+    "links": [
+      {
+        "label": "Read the rulebook",
+        "url": "makeup-class-rulebook.html",
+        "internal": true
+      }
+    ],
+    "contributions": [
+      "Created the gameplay and visual design over twenty weeks.",
+      "Developed a physical game that connects resource choices with the pressures of beauty training."
+    ],
+    "sections": [
+      {
+        "title": "Rules that carry the theme",
+        "body": "The project's design uses the structure of a board game to make pressure and comparison tangible. The original project boards and complete ten-page rulebook are preserved here."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "makeup-class-1",
+        "caption": "Project overview and physical components."
+      },
+      {
+        "image": "makeup-class-2",
+        "caption": "Original design documentation — 2."
+      },
+      {
+        "image": "makeup-class-3",
+        "caption": "Original design documentation — 3."
+      },
+      {
+        "image": "makeup-class-4",
+        "caption": "Original design documentation — 4."
+      },
+      {
+        "image": "makeup-class-5",
+        "caption": "Original design documentation — 5."
+      }
+    ],
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/makeup-class"
+  }
+]
