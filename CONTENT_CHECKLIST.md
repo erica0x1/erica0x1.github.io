@@ -17,5 +17,5 @@
 - 邮件链接指向 ericalin@usc.edu，itch.io 链接指向实际个人主页。
 - 展示图片保存在网站内，不依赖 Wix 图片外链。
 - 首页精选三项，展开后查看全部九项；项目图片支持放大、前后切换与原始尺寸查看。
-- Erica 已确认五个独立项目的 Solo Designer + Developer 身份；Spatial Tinting / Melodic Function / Makeup Class 的美术均由本人制作，To Rei 包含本人绘制的部分美术。
+- Erica 已确认五个独立项目均由本人独立制作；首页以 Solo project 加各项目的设计职责标注；Spatial Tinting / Melodic Function / Makeup Class 的美术均由本人制作，To Rei 包含本人绘制的部分美术。
 - Erica 已确认新项目的周期：To Rei 8 days、Dear Little Alice 2 weeks、Sleepwalk / Line by Line Ongoing、Last Call 4 weeks；Sleepwalk 为双人合作。

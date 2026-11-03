@@ -5,7 +5,7 @@
     "category": "digital",
     "eyebrow": "USC / Investigator",
     "type": "Narrative exploration",
-    "role": "Solo Designer + Developer",
+    "role": "Narrative & Interaction Design",
     "context": "Investigator project",
     "platform": "Desktop browser · Unity",
     "cover": "to-rei-cover",
@@ -52,7 +52,8 @@
     "source": "https://ericalin.itch.io/to-rei",
     "teamSize": "1 (Solo)",
     "duration": "8 days",
-    "authorship": "Design & development by Erica Lin, including original artwork."
+    "authorship": "Design & development by Erica Lin, including original artwork.",
+    "solo": true
   },
   {
     "slug": "sleepwalk",
@@ -112,7 +113,7 @@
     "category": "digital",
     "eyebrow": "USC / Traveller",
     "type": "First-person exploration",
-    "role": "Solo Designer + Developer",
+    "role": "Level & Interaction Design",
     "context": "Traveller project",
     "platform": "PC · Unity",
     "cover": "alice-cover-v2",
@@ -156,7 +157,8 @@
     ],
     "year": "2026",
     "teamSize": "1 (Solo)",
-    "duration": "2 weeks"
+    "duration": "2 weeks",
+    "solo": true
   },
   {
     "slug": "line-by-line",
@@ -301,7 +303,7 @@
     "category": "digital",
     "eyebrow": "Independent work",
     "type": "Spatial-logic puzzle",
-    "role": "Solo Designer + Developer",
+    "role": "Puzzle & Systems Design",
     "context": "Solo project · 7 weeks",
     "platform": "Digital / PC",
     "cover": "spatial-tinting-itch-cover",
@@ -373,7 +375,8 @@
     "layout": "visual",
     "authorship": "Design, development & all visual art by Erica Lin.",
     "gallerySource": "https://ericalin.itch.io/spatial-tinting",
-    "cardFit": "contain"
+    "cardFit": "contain",
+    "solo": true
   },
   {
     "slug": "melodic-function",
@@ -381,7 +384,7 @@
     "category": "digital",
     "eyebrow": "Independent work",
     "type": "Music & logic puzzle",
-    "role": "Solo Designer + Developer",
+    "role": "Systems & Visual Design",
     "context": "Solo project · 10 weeks",
     "platform": "Digital / PC",
     "cover": "melodic-function-itch-cover",
@@ -448,7 +451,8 @@
     ],
     "layout": "visual",
     "authorship": "Design, development & all visual art by Erica Lin.",
-    "gallerySource": "https://ericalin.itch.io/melodic-function"
+    "gallerySource": "https://ericalin.itch.io/melodic-function",
+    "solo": true
   },
   {
     "slug": "dismember",
@@ -514,7 +518,7 @@
     "category": "tabletop",
     "eyebrow": "Independent work",
     "type": "Critical board game",
-    "role": "Solo Designer + Developer",
+    "role": "Game & Visual Design",
     "context": "Solo project · 20 weeks",
     "platform": "Physical / Printed",
     "cover": "makeup-cover",
@@ -565,6 +569,7 @@
       }
     ],
     "layout": "visual",
-    "authorship": "Design, development & all visual art by Erica Lin."
+    "authorship": "Design, development & all visual art by Erica Lin.",
+    "solo": true
   }
 ]
