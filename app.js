@@ -17,6 +17,7 @@
   const preview = dialog.querySelector('.lightbox-image');
   const caption = dialog.querySelector('[data-caption]');
   const counter = dialog.querySelector('[data-counter]');
+  const viewerLabel = dialog.querySelector('[data-viewer-label]');
   const zoom = dialog.querySelector('[data-zoom-toggle]');
   let index = 0;
   const resetZoom = () => { dialog.dataset.zoom = 'false'; zoom.textContent = 'Full size'; zoom.setAttribute('aria-pressed','false'); };
@@ -30,7 +31,9 @@
     resetZoom();
   };
   triggers.forEach(trigger => trigger.addEventListener('click', () => {
-    images = triggers.filter(item => !item.closest('details') || item.closest('details').open);
+    const group=trigger.dataset.imageGroup||'gallery';
+    images = triggers.filter(item => (item.dataset.imageGroup||'gallery')===group && (!item.closest('details') || item.closest('details').open));
+    if(viewerLabel)viewerLabel.textContent=group==='portfolio'?'DESIGN PORTFOLIO':'PROJECT GALLERY';
     show(images.indexOf(trigger)); dialog.showModal(); document.body.classList.add('dialog-open');
   }));
   dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());

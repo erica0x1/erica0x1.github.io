@@ -5,7 +5,7 @@
     "category": "digital",
     "eyebrow": "USC / Investigator",
     "type": "Narrative exploration",
-    "role": "Narrative & interaction design",
+    "role": "Solo Designer + Developer",
     "context": "Investigator project",
     "platform": "Desktop browser · Unity",
     "cover": "to-rei-cover",
@@ -49,7 +49,10 @@
       }
     ],
     "year": "2026",
-    "source": "https://ericalin.itch.io/to-rei"
+    "source": "https://ericalin.itch.io/to-rei",
+    "teamSize": "1 (Solo)",
+    "duration": "8 days",
+    "authorship": "Design & development by Erica Lin, including original artwork."
   },
   {
     "slug": "sleepwalk",
@@ -99,7 +102,9 @@
         "spoiler": true
       }
     ],
-    "year": "2026"
+    "year": "2026",
+    "teamSize": "2 (Pair)",
+    "duration": "Ongoing"
   },
   {
     "slug": "dear-little-alice",
@@ -107,11 +112,11 @@
     "category": "digital",
     "eyebrow": "USC / Traveller",
     "type": "First-person exploration",
-    "role": "Game & level design",
+    "role": "Solo Designer + Developer",
     "context": "Traveller project",
     "platform": "PC · Unity",
-    "cover": "alice-cover",
-    "coverAlt": "Dear Little Alice title screen, with red lettering against a black background.",
+    "cover": "alice-cover-v2",
+    "coverAlt": "Dear Little Alice promotional cover: an uncanny small doorway, paper maze walls, and the red-banded bottle.",
     "summary": "A small doorway. A changing sense of scale. An exit that asks you to look again.",
     "intro": "A surreal first-person exploration game that uses scale, navigation, and shifting environmental meaning. An uncanny forest leads toward a small doorway; shrinking changes what the player can access and how the surrounding space feels.",
     "links": [],
@@ -149,7 +154,9 @@
         "spoiler": true
       }
     ],
-    "year": "2026"
+    "year": "2026",
+    "teamSize": "1 (Solo)",
+    "duration": "2 weeks"
   },
   {
     "slug": "line-by-line",
@@ -196,7 +203,9 @@
       }
     ],
     "note": "Images show development studies from October 2026, rather than the latest team build.",
-    "year": "2026"
+    "year": "2026",
+    "teamSize": "Team project",
+    "duration": "Ongoing"
   },
   {
     "slug": "last-call",
@@ -204,15 +213,29 @@
     "category": "tabletop",
     "eyebrow": "USC / Meaningful Play",
     "type": "Cooperative board game",
-    "role": "Producer",
+    "role": "Designer + Producer",
     "context": "Team project · Four-player game",
-    "platform": "Physical / Printed",
-    "cover": "last-call-prototype-01",
-    "coverAlt": "Last Call's early print-and-play action cards, including Serve Drink, Serve Water, and Calm.",
+    "platform": "Tabletop · Online adaptation",
+    "cover": "last-call-cover-v2",
+    "coverAlt": "Last Call promotional cover featuring the four original role-card designs.",
     "summary": "Run the bar together. Balance the night's revenue with getting everyone home safely.",
-    "intro": "A cooperative tabletop game about running a busy bar. Players take on the bartender, server, bouncer, and manager roles, coordinating actions while balancing revenue, customer intoxication, chaos, and safety.",
-    "links": [],
+    "intro": "A cooperative tabletop game about running a busy bar. Players take on the bartender, server, bouncer, and manager roles, coordinating actions while balancing revenue, customer intoxication, chaos, and safety. An online adaptation lets players try the game in their browser.",
+    "links": [
+      {
+        "label": "Play online",
+        "url": "https://yolanda699.github.io/Last-Call-Demo/"
+      },
+      {
+        "label": "Read the rules",
+        "url": "https://yolanda699.github.io/Last-Call-Demo/rulebook.pdf"
+      },
+      {
+        "label": "Team credits",
+        "url": "https://yolanda699.github.io/Last-Call-Demo/credits.html"
+      }
+    ],
     "contributions": [
+      "Co-designed the cooperative tabletop experience as part of the four-person design team.",
       "Coordinated weekly tasks, responsibilities, and project deliverables as producer.",
       "Organized task tracking and supported communication across design, art, and playtesting.",
       "Helped bring the team's design process and takeaways into the final presentation."
@@ -250,7 +273,27 @@
       }
     ],
     "note": "The images document an early print-and-play prototype; later presentation notes describe further iterations.",
-    "year": "2026"
+    "year": "2026",
+    "teamSize": "4",
+    "duration": "4 weeks",
+    "credits": [
+      {
+        "name": "Erica Lin",
+        "role": "Designer + Producer"
+      },
+      {
+        "name": "Ryan Ontiveros",
+        "role": "Designer + Narrative"
+      },
+      {
+        "name": "Yolanda Liu",
+        "role": "Designer + Artist + Web Engineer"
+      },
+      {
+        "name": "Luna Lin",
+        "role": "Designer + QA"
+      }
+    ]
   },
   {
     "slug": "spatial-tinting",
@@ -258,10 +301,10 @@
     "category": "digital",
     "eyebrow": "Independent work",
     "type": "Spatial-logic puzzle",
-    "role": "Designer & Programmer",
+    "role": "Solo Designer + Developer",
     "context": "Solo project · 7 weeks",
     "platform": "Digital / PC",
-    "cover": "spatial-cover",
+    "cover": "spatial-tinting-itch-cover",
     "coverAlt": "Spatial Tinting's pastel cube and color-matching interface.",
     "summary": "See through color. Read the structure. Find the rule.",
     "intro": "A spatial-logic puzzle that turns color perception into a deductive, perspective-driven game system. Players interpret how colored faces and structure relate, using observation as part of the puzzle-solving process.",
@@ -275,13 +318,29 @@
       "Designed and programmed the project over seven weeks.",
       "Developed the relationship between color perception, spatial structure, and puzzle logic."
     ],
-    "sections": [
+    "sections": [],
+    "gallery": [
       {
-        "title": "Color as a rule",
-        "body": "The project explores how the same structure can be understood differently through color and perspective. The original design boards below document the inspirations, level design, and development process."
+        "image": "spatial-tinting-gameplay-01",
+        "caption": "Level selection and the color-matching camera."
+      },
+      {
+        "image": "spatial-tinting-gameplay-02",
+        "caption": "Reading a shape through color."
+      },
+      {
+        "image": "spatial-tinting-gameplay-03",
+        "caption": "A completed spatial puzzle."
+      },
+      {
+        "image": "spatial-tinting-gameplay-04",
+        "caption": "Comparing a folded structure with its projected colors."
       }
     ],
-    "gallery": [
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/spatial-tinting",
+    "teamSize": "1 (Solo)",
+    "duration": "7 weeks",
+    "portfolio": [
       {
         "image": "spatial-tinting-1",
         "caption": "Project overview."
@@ -311,7 +370,10 @@
         "caption": "Project documentation."
       }
     ],
-    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/spatial-tinting"
+    "layout": "visual",
+    "authorship": "Design, development & all visual art by Erica Lin.",
+    "gallerySource": "https://ericalin.itch.io/spatial-tinting",
+    "cardFit": "contain"
   },
   {
     "slug": "melodic-function",
@@ -319,11 +381,11 @@
     "category": "digital",
     "eyebrow": "Independent work",
     "type": "Music & logic puzzle",
-    "role": "System & Visual Design",
+    "role": "Solo Designer + Developer",
     "context": "Solo project · 10 weeks",
     "platform": "Digital / PC",
-    "cover": "melodic-cover",
-    "coverAlt": "A hand-drawn eye contains a mathematical wave, with function controls below.",
+    "cover": "melodic-function-itch-cover",
+    "coverAlt": "Melodic Function’s original itch.io title artwork, with a hand-drawn rabbit, moon, music, and quill.",
     "summary": "In this world, music obeys math.",
     "intro": "A rule-based music puzzle where mathematical functions become melodies players restore through interactive reasoning. The project brings musical patterns, mathematical curves, and a hand-drawn visual language into the same puzzle system.",
     "links": [
@@ -336,13 +398,33 @@
       "Created the system and visual design over ten weeks.",
       "Explored the relationship between mathematical functions and musical patterns."
     ],
-    "sections": [
+    "sections": [],
+    "gallery": [
       {
-        "title": "Reasoning through sound and shape",
-        "body": "Functions provide a visual structure for musical information. The player works with that structure to understand and restore a melody; the design boards below document the original project."
+        "image": "melodic-function-gameplay-01",
+        "caption": "The musical staff and hand-drawn piano."
+      },
+      {
+        "image": "melodic-function-gameplay-02",
+        "caption": "Finding the function behind a melody."
+      },
+      {
+        "image": "melodic-function-gameplay-03",
+        "caption": "Adjusting mathematical functions."
+      },
+      {
+        "image": "melodic-function-gameplay-04",
+        "caption": "Progression through the musical world."
+      },
+      {
+        "image": "melodic-function-gameplay-05",
+        "caption": "Original credits and hand-drawn artwork."
       }
     ],
-    "gallery": [
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/melodic-function",
+    "teamSize": "1 (Solo)",
+    "duration": "10 weeks",
+    "portfolio": [
       {
         "image": "melodic-function-1",
         "caption": "Project overview."
@@ -364,7 +446,9 @@
         "caption": "Original design documentation — 5."
       }
     ],
-    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/melodic-function"
+    "layout": "visual",
+    "authorship": "Design, development & all visual art by Erica Lin.",
+    "gallerySource": "https://ericalin.itch.io/melodic-function"
   },
   {
     "slug": "dismember",
@@ -389,19 +473,40 @@
       "Contributed gameplay programming and systems implementation within a four-person jam team.",
       "Worked on the systems connecting body-part statistics, durability, and survival decisions."
     ],
-    "sections": [
+    "sections": [],
+    "gallery": [
       {
-        "title": "Survival through systems",
-        "body": "The body is part of the game's resource economy. The original project board documents the concept, display, systems, and programming work behind the prototype."
+        "image": "dismember-gameplay-01",
+        "caption": "The city and player status."
+      },
+      {
+        "image": "dismember-gameplay-02",
+        "caption": "Inspecting body-part statistics."
+      },
+      {
+        "image": "dismember-gameplay-03",
+        "caption": "Choosing work to survive."
+      },
+      {
+        "image": "dismember-gameplay-04",
+        "caption": "The shop and its resources."
+      },
+      {
+        "image": "dismember-gameplay-05",
+        "caption": "The luck mini-game."
       }
     ],
-    "gallery": [
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/dismember",
+    "teamSize": "4",
+    "duration": "72 hours",
+    "portfolio": [
       {
         "image": "dismember-1",
         "caption": "Original project board — concept, systems, display, and programming."
       }
     ],
-    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/dismember"
+    "layout": "hybrid",
+    "gallerySource": "https://ericalin.itch.io/dismember"
   },
   {
     "slug": "makeup-class",
@@ -409,7 +514,7 @@
     "category": "tabletop",
     "eyebrow": "Independent work",
     "type": "Critical board game",
-    "role": "Gameplay & Visual Design",
+    "role": "Solo Designer + Developer",
     "context": "Solo project · 20 weeks",
     "platform": "Physical / Printed",
     "cover": "makeup-cover",
@@ -427,13 +532,17 @@
       "Created the gameplay and visual design over twenty weeks.",
       "Developed a physical game that connects resource choices with the pressures of beauty training."
     ],
-    "sections": [
+    "sections": [],
+    "gallery": [
       {
-        "title": "Rules that carry the theme",
-        "body": "The project's design uses the structure of a board game to make pressure and comparison tangible. The original project boards and complete ten-page rulebook are preserved here."
+        "image": "makeup-cover",
+        "caption": "The physical game: makeup-palette board, cards, and pieces."
       }
     ],
-    "gallery": [
+    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/makeup-class",
+    "teamSize": "1 (Solo)",
+    "duration": "20 weeks",
+    "portfolio": [
       {
         "image": "makeup-class-1",
         "caption": "Project overview and physical components."
@@ -455,6 +564,7 @@
         "caption": "Original design documentation — 5."
       }
     ],
-    "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/makeup-class"
+    "layout": "visual",
+    "authorship": "Design, development & all visual art by Erica Lin."
   }
 ]

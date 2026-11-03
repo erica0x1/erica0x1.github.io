@@ -15,7 +15,7 @@ node scripts/serve.mjs
 ## 修改内容
 
 - content/projects.json：项目介绍、角色、链接、图库。
-- scripts/build.mjs：页面生成与项目页模板。
+- scripts/build.mjs：页面生成；scripts/project-template.mjs：项目页模板。
 - scripts/home-template.mjs：黑板首页、精选作品、个人介绍与桌宠。
 - styles.css：基础与项目页样式；studio.css：新版纸张、黑板、桌宠与手机样式。
 - app.js：项目图片放大与结尾图的剧透保护。
@@ -54,7 +54,7 @@ node scripts/build.mjs
 
 ## 新版交互
 
-- 默认展示 Line by Line、Sleepwalk、To Rei，点击 View all 9 games 展开其余六个游戏。
+- 默认展示 Spatial Tinting（大图）、Sleepwalk 和 To Rei（小图），点击 View all 9 games 展开其余六个游戏。All / Digital / Tabletop 可切换分类；后两项直接展示该分类全部作品。
 - 点击或拖动粉笔 / 黑板擦，然后在黑板上按住拖动；restore the board 恢复，Esc 放下工具。
 - 三张精选图都有局部 WebGL Bayer 颗粒效果；不支持 WebGL 时使用 Canvas 降级。手机正常展示原图。
 - 个人介绍从信封展开为照片、信件、笔记；窄屏按实际纸张高度依次排列。
@@ -69,6 +69,16 @@ node scripts/build.mjs
 
 2026-11-03：改为预乘透明度输出，闲置时隐藏特效层，并用 CSS 圆形裁剪独立限制范围；鼠标淡出按实际时间计算，切出窗口、离开屏幕或图形上下文丢失时恢复原图。页面资源版本已更新，避免继续加载旧效果。
 
-启动本地预览后，打开 `/tests/dither-regression.html`，点击 **Run regression checks**。16 项检查覆盖生产 shader 的透明像素、局部范围、高分辨率与较低精度，以及三张图的激活、淡出、窗口失焦和上下文丢失。重新运行前刷新页面，因为最后一项会主动丢弃测试用图形上下文。
+启动本地预览后，打开 `/tests/dither-regression.html`，点击 **Run regression checks**。17 项检查覆盖生产 shader 的透明像素、局部范围、高分辨率与较低精度、完整封面的留白区域，以及三张图的激活、淡出、窗口失焦和上下文丢失。重新运行前刷新页面，因为最后一项会主动丢弃测试用图形上下文。
 
 这些检查与 390px / 3840px 布局检查已通过；它们不能代替在朋友实际显卡和浏览器上的复核。
+
+## 2026-11-03 内容与交互更新
+
+- 项目数据新增 `teamSize`、`duration`；Line by Line 的开发人数尚未确认，显示 Team project。
+- Spatial Tinting、Melodic Function、Makeup Class 使用 `visual` 布局，正文直接展示原作品集页面；Dismember 使用 `hybrid`，保留 Overview / My contribution 后接作品集。`portfolio` 与 `gallery` 分开存储、分开放大翻页。
+- 三款数字游戏的 gallery 使用 itch.io 原始截图；Makeup Class 尚无提供的 itch.io 页面，保留实体游戏照片。
+- Last Call 加入在线试玩、规则与四人团队署名。新封面与 Dear Little Alice 宣传封面的原素材、提示词记录见 assets/cover-generation.md。
+- 黑板使用本地 Caveat / Patrick Hand 字体；约 9px 颗粒粉笔笔刷与粉笔端面匹配，绘画时笔尖跟随落笔位置。
+- 手机号按 Erica 要求加入公开 contact 区域。
+- 本轮验证：9 个项目元数据完整，18 张作品集页面与游戏图库互不混合，360 个本地引用有效；实际检查分类、放大翻页、粉笔绘画、桌面与 390px 布局，17 项颗粒检查通过。
