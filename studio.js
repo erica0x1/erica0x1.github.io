@@ -140,7 +140,7 @@
   }
   document.querySelectorAll('[data-dither]').forEach(surface=>{const img=surface.querySelector('img');if(img.complete&&img.naturalWidth)ditherEffect(surface);else img.addEventListener('load',()=>ditherEffect(surface),{once:true});});
 
-  // Real canvas marks: the eraser removes the title and drawings alike.
+  // Chalk and lettering share a pigment layer; felt lifts and drags that pigment.
   const board=document.querySelector('[data-blackboard]');
   if(board){
     const canvas=board.querySelector('#chalk-canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
@@ -154,6 +154,55 @@
     const grainContext=grain.getContext('2d'),pigment=grainContext.createImageData(128,128);let chalkSeed=72017;
     for(let i=0;i<pigment.data.length;i+=4){chalkSeed=(chalkSeed*1664525+1013904223)>>>0;const n=chalkSeed/4294967296;pigment.data[i]=238;pigment.data[i+1]=239;pigment.data[i+2]=224;pigment.data[i+3]=n<.19?0:Math.round(55+n*135);}
     grainContext.putImageData(pigment,0,0);const chalkPigment=ctx.createPattern(grain,'repeat');
+    // The long, softly worn footprint follows the physical eraser, including
+    // uneven felt fibres. A fixed seed avoids shimmering texture while wiping.
+    const felt=document.createElement('canvas');felt.width=184;felt.height=68;
+    const feltContext=felt.getContext('2d'),feltPixels=feltContext.createImageData(felt.width,felt.height);
+    let feltSeed=19317;
+    for(let y=0;y<felt.height;y++)for(let x=0;x<felt.width;x++){
+      feltSeed=(feltSeed*1664525+1013904223)>>>0;
+      const noise=feltSeed/4294967296;
+      const nx=Math.abs((x+.5)/felt.width*2-1),ny=Math.abs((y+.5)/felt.height*2-1);
+      const edge=clamp(1-Math.hypot(Math.max(0,nx-.83)/.17,Math.max(0,ny-.58)/.42),0,1);
+      const fibres=.73+.12*Math.sin(y*.62)+.065*Math.sin(y*1.83+x*.035)+noise*.09;
+      const i=(y*felt.width+x)*4;
+      feltPixels.data[i]=feltPixels.data[i+1]=feltPixels.data[i+2]=255;
+      feltPixels.data[i+3]=Math.round(255*edge*edge*clamp(fibres,0,1));
+    }
+    feltContext.putImageData(feltPixels,0,0);
+    const feltWidth=92,feltHeight=34,feltAngle=-6*Math.PI/180;
+    const lift=document.createElement('canvas'),liftContext=lift.getContext('2d');
+    const liftWidth=124,liftHeight=66;
+    function feltStamp(p,flow,dx,dy){
+      const left=p.x-liftWidth/2,top=p.y-liftHeight/2;
+      // Pick up only chalk already on the board. A clean patch stays clean.
+      liftContext.setTransform(1,0,0,1,0,0);liftContext.globalCompositeOperation='source-over';
+      liftContext.clearRect(0,0,lift.width,lift.height);
+      liftContext.drawImage(canvas,left*dpr,top*dpr,liftWidth*dpr,liftHeight*dpr,0,0,lift.width,lift.height);
+      liftContext.save();liftContext.setTransform(dpr,0,0,dpr,0,0);
+      liftContext.globalCompositeOperation='destination-in';liftContext.translate(liftWidth/2,liftHeight/2);liftContext.rotate(feltAngle);
+      liftContext.drawImage(felt,-feltWidth/2,-feltHeight/2,feltWidth,feltHeight);liftContext.restore();
+      ctx.save();ctx.globalCompositeOperation='destination-out';ctx.globalAlpha=flow;
+      ctx.translate(p.x,p.y);ctx.rotate(feltAngle);
+      ctx.drawImage(felt,-feltWidth/2,-feltHeight/2,feltWidth,feltHeight);ctx.restore();
+      // A small amount of the lifted pigment becomes a soft directional smudge.
+      // Subsequent passes lift this residue too, so dust cannot accumulate forever.
+      ctx.save();ctx.globalCompositeOperation='source-over';ctx.globalAlpha=flow*.13;
+      ctx.filter=`blur(${1.1*dpr}px)`;
+      ctx.drawImage(lift,left+dx*2.6,top+dy*2.6,liftWidth,liftHeight);ctx.restore();
+    }
+    function wipeFelt(prev,p){
+      const dx=p.x-prev.x,dy=p.y-prev.y,distance=Math.hypot(dx,dy);
+      if(distance<.05){if(!last)feltStamp(p,.48,0,0);return;}
+      const ux=dx/distance,uy=dy/distance;
+      // Integrate by distance, not event count: a slow drag and a fast drag have
+      // the same strength. Account for the felt's width when changing direction.
+      const along=ux*Math.cos(feltAngle)+uy*Math.sin(feltAngle);
+      const across=-ux*Math.sin(feltAngle)+uy*Math.cos(feltAngle);
+      const contact=1/Math.max(Math.abs(along)/feltWidth,Math.abs(across)/feltHeight);
+      const steps=Math.max(1,Math.ceil(distance/4)),flow=1-Math.exp(-2.8*(distance/steps)/contact);
+      for(let i=1;i<=steps;i++){const t=i/steps;feltStamp({x:prev.x+dx*t,y:prev.y+dy*t},flow,ux,uy);}
+    }
     function textLayer(animate=false){
       if(!w||!h)return;
       cancelAnimationFrame(revealFrame);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,w,h);
@@ -174,7 +223,7 @@
       ctx.putImageData(data,0,0);board.classList.add('canvas-ready');
       if(animate&&!reduced.matches){const base=document.createElement('canvas');base.width=canvas.width;base.height=canvas.height;base.getContext('2d').drawImage(canvas,0,0);const begin=performance.now();const tick=now=>{const t=clamp((now-begin)/1000,0,1);ctx.clearRect(0,0,w,h);ctx.save();ctx.beginPath();ctx.rect(0,0,w*ease(t),h);ctx.clip();ctx.drawImage(base,0,0,w,h);ctx.restore();if(t<1)revealFrame=requestAnimationFrame(tick);else revealFrame=0;};revealFrame=requestAnimationFrame(tick);}
     }
-    const resize=()=>{const r=board.getBoundingClientRect();if(!r.width||!r.height||(!ready))return;if(Math.abs(w-r.width)<.5&&Math.abs(h-r.height)<.5)return;w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);textLayer(false);};
+    const resize=()=>{const r=board.getBoundingClientRect();if(!r.width||!r.height||(!ready))return;if(Math.abs(w-r.width)<.5&&Math.abs(h-r.height)<.5)return;w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);lift.width=Math.round(liftWidth*dpr);lift.height=Math.round(liftHeight*dpr);textLayer(false);};
     document.fonts.ready.then(()=>{ready=true;resize();textLayer(true);});new ResizeObserver(resize).observe(board);
     const selectTool=next=>{tool=next;board.classList.toggle('tool-active',!!tool);toolButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.boardTool===tool)));if(tool){cursor.dataset.tool=tool;cursorImage.src=`assets/studio/${tool}.webp`;hint.textContent=tool==='chalk'?'press & drag to draw':'wipe a little space';}else{cursor.style.opacity='0';hint.textContent='leave a little doodle ↘';}};
     const localPoint=e=>{const r=board.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};};
@@ -184,7 +233,7 @@
       if(!tool||!ready)return;if(revealFrame){cancelAnimationFrame(revealFrame);revealFrame=0;textLayer(false);}
       if(p.x<0||p.x>w||p.y<0||p.y>h){last=null;return;}
       const prev=last||p;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineCap='round';ctx.lineJoin='round';ctx.globalAlpha=1;
-      if(tool==='eraser'){ctx.globalCompositeOperation='destination-out';ctx.strokeStyle='#000';ctx.lineWidth=48;ctx.beginPath();ctx.moveTo(prev.x,prev.y);ctx.lineTo(p.x+.01,p.y+.01);ctx.stroke();}
+      if(tool==='eraser')wipeFelt(prev,p);
       else{const diameter=(cursor.offsetWidth||66)*(cursorImage.naturalHeight/cursorImage.naturalWidth||.148)*.92;ctx.globalCompositeOperation='source-over';ctx.strokeStyle=chalkPigment;ctx.lineWidth=diameter;ctx.beginPath();ctx.moveTo(prev.x,prev.y);ctx.lineTo(p.x+.01,p.y+.01);ctx.stroke();const n=Math.max(1,Math.ceil(Math.hypot(p.x-prev.x,p.y-prev.y)/1.5));for(let i=0;i<n;i++){const t=i/n;ctx.fillStyle=`rgba(236,238,224,${.06+Math.random()*.15})`;ctx.fillRect(prev.x+(p.x-prev.x)*t+(Math.random()-.5)*(diameter+3),prev.y+(p.y-prev.y)*t+(Math.random()-.5)*(diameter+3),.4+Math.random()*.7,.4+Math.random()*.7);}}
       ctx.globalCompositeOperation='source-over';last=p;
     }

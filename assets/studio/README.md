@@ -25,3 +25,7 @@ These are original generated assets guided by the user's references; no Framer t
 ## Erica's e. monogram
 
 `erica-logo.png` is a 512px export of the original code-authored `../../favicon.svg`: a rounded, handwritten lowercase e in pine green, with a berry-red dot on cream. `scripts/build-icons.py` exports matching browser favicon and home-screen PNG/ICO sizes from the same path geometry. This vector logo is not AI-generated raster artwork and uses no font dependency.
+
+## Felt eraser interaction
+
+The chalkboard eraser uses a 92×34 CSS-pixel, softly worn rectangular felt footprint. Pressure varies across fibres, pigment is lifted gradually with distance-based strength, and a small amount of existing chalk is dragged into a faint smudge. Repeated passes also lift the residue. Empty board areas do not generate new dust. The cursor is clipped to the board/frame bounds so wiping or resizing cannot widen a mobile page.

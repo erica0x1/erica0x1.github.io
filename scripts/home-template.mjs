@@ -9,7 +9,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
       <div class="blackboard" data-blackboard>
         <div class="board-copy"><h1 id="hero-title">Erica Lin.</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Developer</span></li></ul></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
-        <div class="board-cursor" aria-hidden="true"><img src="assets/studio/chalk.webp" alt=""></div>
+        <div class="board-cursor-clip" aria-hidden="true"><div class="board-cursor"><img src="assets/studio/chalk.webp" alt=""></div></div>
         <div class="board-tool-row"><span class="board-hint" id="board-hint">leave a little doodle ↘</span><div class="board-tools" role="group" aria-label="Chalkboard tools"><button class="chalk-tool" type="button" data-board-tool="chalk" aria-label="Pick up the chalk" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/chalk.webp" alt="A piece of white chalk" draggable="false"></button><button class="eraser-tool" type="button" data-board-tool="eraser" aria-label="Pick up the eraser" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/eraser.webp" alt="A wooden chalkboard eraser with charcoal felt" draggable="false"></button></div></div>
       </div><div class="board-ledge" aria-hidden="true"></div>
     </div>
@@ -41,6 +41,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify ↗</a></section>
-<script src="studio.js?v=7" defer></script>
+<script src="studio.js?v=8" defer></script>
 ${tail('')}`;
 }
