@@ -1,0 +1,55 @@
+[
+  {
+    "image": "line-by-line-layout-top",
+    "source": "D:\\ericalin_EricaL-Laptop_CTIN591\\LineByLine_Unity\\Library\\CodexSTAIteration\\final01-top.png",
+    "source_sha256": "28604f57f5ce4e200ca0601bddb1a9c451de13b6eb06f99851f2e3e74785f36b",
+    "context": "Erica theatre layout / camera iteration capture; team game assets remain collaborative."
+  },
+  {
+    "image": "line-by-line-audience-camera",
+    "source": "D:\\ericalin_EricaL-Laptop_CTIN591\\LineByLine_Unity\\Library\\CodexMainCameraReapply\\qa-audience.png",
+    "source_sha256": "c7155f743d9cd06d20e16663b70dd821b21dc4a32e7695486439087807345b87",
+    "context": "Erica theatre layout / camera iteration capture; team game assets remain collaborative."
+  },
+  {
+    "image": "line-by-line-booth-camera",
+    "source": "D:\\ericalin_EricaL-Laptop_CTIN591\\LineByLine_Unity\\Library\\CodexMainCameraReapply\\qa-booth-entry.png",
+    "source_sha256": "b4e4a2d5ae752a8417eba93d0e3b402cc3b43fabfc8f4344e7dd462a0c6bdc7f",
+    "context": "Erica theatre layout / camera iteration capture; team game assets remain collaborative."
+  },
+  {
+    "image": "line-by-line-clue-camera",
+    "source": "D:\\ericalin_EricaL-Laptop_CTIN591\\LineByLine_Unity\\Library\\CodexMainCameraReapply\\qa-notes.png",
+    "source_sha256": "904e05560290512f123adc5bb84953b80dcc0c5dd17aeb81b035563bda58d291",
+    "context": "Erica theatre layout / camera iteration capture; team game assets remain collaborative."
+  },
+  {
+    "image": "alice-red-forest",
+    "source": "C:\\Users\\ERICA\\Documents\\Codex\\alice-portfolio-capture\\PortfolioCaptures\\red-forest-2.png",
+    "source_sha256": "dcdbb1aa2c63776c34928fde8d477a17b0c1a6db6d5c3af03ca02c1aa61ec3f6",
+    "scene": "Assets/Scenes/AliceSizeMaze_ExitTrap_Experiment.unity",
+    "scene_sha256": "0e61b9f38b936c88c3e0cb810d81bba0992a9284086f94ba2eabe0e38e767a59",
+    "context": "Player-camera render of the saved game scene in an isolated copy. Original geometry and materials retained. No scene regeneration or save."
+  },
+  {
+    "image": "alice-red-flowers",
+    "source": "C:\\Users\\ERICA\\Documents\\Codex\\alice-portfolio-capture\\PortfolioCaptures\\red-flower-route.png",
+    "source_sha256": "98cbf7042fbed054129b2f9f235419f5dc741a8f6c60ea6073ea094c35097d39",
+    "scene": "Assets/Scenes/AliceSizeMaze_ExitTrap_Experiment.unity",
+    "scene_sha256": "0e61b9f38b936c88c3e0cb810d81bba0992a9284086f94ba2eabe0e38e767a59",
+    "context": "Player-camera render of the saved game scene in an isolated copy. Original geometry and materials retained. No scene regeneration or save."
+  },
+  {
+    "image": "alice-red-heart",
+    "source": "C:\\Users\\ERICA\\Documents\\Codex\\alice-portfolio-capture\\PortfolioCaptures\\red-forest-7.png",
+    "source_sha256": "8ba4113b9cd3faffff3ad7f95e21592a2e9fc0c44fc0dff0755ae1c46dc6e93f",
+    "scene": "Assets/Scenes/AliceSizeMaze_ExitTrap_Experiment.unity",
+    "scene_sha256": "0e61b9f38b936c88c3e0cb810d81bba0992a9284086f94ba2eabe0e38e767a59",
+    "context": "Player-camera render of the saved game scene in an isolated copy. Original geometry and materials retained. No scene regeneration or save."
+  },
+  {
+    "image": "alice-cover-v4",
+    "source": "Built-in imagegen edit. See alice-cover-v4-prompt.md for exact prompt and source references.",
+    "context": "Promotional cover; not a gameplay screenshot."
+  }
+]

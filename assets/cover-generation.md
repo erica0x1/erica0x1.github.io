@@ -20,3 +20,9 @@ Use case: stylized-concept. Asset type: landscape 16:10 portfolio promotional co
 Mode: built-in imagegen edit. Output: `images/alice-cover-v3.webp`.
 Inputs: original DearLittleAlice-Title-1280x720 game title screen (typography); previous green paper-maze promotional cover (background); Giant-Key-Landmark gameplay capture (scale and key reference).
 Prompt: Preserve the distinctive ornate distressed Beyond Wonderland title letterforms, ivory “Dear Little” and large vivid red “Alice”, including decorative flourishes and grunge. Replace the black background with a dark green paper labyrinth, tiny illuminated doorway, gray bottle with a red band, and subtle tall key silhouette. Large centered title readable at card size. Remove Start, Quit and the outer UI frame. Eerie storybook mood; no extra text. Promotional art, not a gameplay screenshot.
+
+## Dear Little Alice v4 — red forest
+
+Mode: built-in imagegen edit. Output: `images/alice-cover-v4.webp`.
+
+Black leafless geometric trees, small red flowers and red light bars now follow actual red-level references. The gray/red/black bottle is reduced to a handheld size. The original ornate ivory/red lettering style is retained. See [the complete final prompt and input record](alice-cover-v4-prompt.md).

@@ -25,3 +25,10 @@ Second 2026-11-03 refresh:
 - `line-by-line-cover-v2` and the inspection, journal, crossword and dialogue stills come from the team's public material at https://mfzhou.carrd.co/ . These are team game assets, not a claim that Erica created the UI, character art, or core crossword system. Erica's role remains Level Designer.
 - `alice-cover-v3`: imagegen edit using the original ivory/red Beyond Wonderland title lettering as the typography reference, plus maze, doorway and bottle imagery. It is promotional artwork; gallery images remain actual gameplay captures. See `cover-generation.md`.
 - Original ending images remain archived as files but are no longer displayed. Makeup Class's previous gallery photograph is not displayed; its existing home cover remains.
+
+Third 2026-11-03 refresh:
+- Sleepwalk is displayed as **2 weeks**. The two Reflection captures and the surface-feedback comparison were removed from the gallery; the other five images remain.
+- Line by Line keeps the team banner as its cover. The four team gameplay stills added in the second refresh are no longer displayed. The gallery now contains six captures of Erica's theatre layout, seating plan, catwalk, control-room layout, and camera framing. These document her level-design work within a collaborative game; character and environment assets are not claimed as solo work.
+- `alice-red-forest`, `alice-red-flowers`, `alice-red-heart`: actual player-camera renders from the existing saved red forest scene, captured in an isolated project copy. The original game was not modified; source and copy scene hashes match. No color grading or generative edits were applied to these gallery images.
+- `alice-cover-v4`: built-in imagegen promotional cover edit matching the red forest's bare angular black trees, small red flowers, red light bars, and actual bottle proportions. Original title lettering style retained. Full prompt in `alice-cover-v4-prompt.md`.
+- New screenshot origins and source hashes are recorded in `refresh-three-sources.json`.

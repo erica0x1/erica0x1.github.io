@@ -109,20 +109,8 @@
         "caption": "Interacting with the station forms the missing bridge."
       },
       {
-        "image": "sleepwalk-reflection-fold",
-        "caption": "Folding a surface changes the connection between platforms."
-      },
-      {
-        "image": "sleepwalk-reflection-path",
-        "caption": "Moving both characters along the newly connected path."
-      },
-      {
         "image": "sleepwalk-cover",
         "caption": "Navigating circles and crescents in Rolling Girl."
-      },
-      {
-        "image": "sleepwalk-surface-feedback",
-        "caption": "The occupied surface darkens before a rotation."
       },
       {
         "image": "sleepwalk-mirror-start",
@@ -135,7 +123,7 @@
     ],
     "year": "2026",
     "teamSize": "2 (Pair)",
-    "duration": "17 days"
+    "duration": "2 weeks"
   },
   {
     "slug": "dear-little-alice",
@@ -146,8 +134,8 @@
     "role": "Level & Interaction Design",
     "context": "Traveller project",
     "platform": "PC · Unity",
-    "cover": "alice-cover-v3",
-    "coverAlt": "Dear Little Alice: ornate ivory and red title lettering above a paper maze, a tiny doorway, a giant key, and a bottle.",
+    "cover": "alice-cover-v4",
+    "coverAlt": "Dear Little Alice promotional cover with its ornate ivory and red title, bare black trees, glowing red flowers and light posts, a tiny maze doorway, and a small gray-and-red bottle.",
     "summary": "A small doorway. A changing sense of scale. An exit that asks you to look again.",
     "intro": "A surreal first-person exploration game that uses scale, navigation, and shifting environmental meaning. An uncanny forest leads toward a small doorway; shrinking changes what the player can access and how the surrounding space feels.",
     "links": [],
@@ -167,6 +155,18 @@
       }
     ],
     "gallery": [
+      {
+        "image": "alice-red-forest",
+        "caption": "The red forest entrance: bare black trees, red ground markers, and a luminous rectangular gate."
+      },
+      {
+        "image": "alice-red-flowers",
+        "caption": "Following a sequence of red flowers through the black forest."
+      },
+      {
+        "image": "alice-red-heart",
+        "caption": "Red cues lead toward a heart-shaped lure at a forest dead end."
+      },
       {
         "image": "alice-entrance",
         "caption": "The tiny maze entrance viewed at normal size."
@@ -229,28 +229,28 @@
     ],
     "gallery": [
       {
-        "image": "line-by-line-crossword",
-        "caption": "Combining discovered words in the crossword interface."
-      },
-      {
-        "image": "line-by-line-journal",
-        "caption": "Revisiting collected evidence in the detective’s journal."
-      },
-      {
-        "image": "line-by-line-dialogue",
-        "caption": "Questioning Margo through the dialogue interface."
-      },
-      {
-        "image": "line-by-line-inspection",
-        "caption": "Inspecting evidence in the theatre."
-      },
-      {
         "image": "line-by-line-layout",
         "caption": "The theatre layout and audience seating."
       },
       {
+        "image": "line-by-line-layout-top",
+        "caption": "Theatre level layout: seating blocks, central stage, and circulation routes."
+      },
+      {
+        "image": "line-by-line-audience-camera",
+        "caption": "In-game audience camera framing the stage and surrounding seating."
+      },
+      {
         "image": "line-by-line-catwalk",
         "caption": "Navigating the theatre catwalk."
+      },
+      {
+        "image": "line-by-line-booth-camera",
+        "caption": "In-game control-room camera and the placement of desks, operators, and the exit."
+      },
+      {
+        "image": "line-by-line-clue-camera",
+        "caption": "Close camera framing for the control-room evidence board and desk."
       }
     ],
     "note": "Images show development studies from October 2026, rather than the latest team build.",
