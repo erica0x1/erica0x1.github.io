@@ -151,3 +151,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .studio-contact h2{font-size:28px;line-height:1.35}
 @media(max-width:760px){.brand{font-size:25px}.brand-face{font-size:29px;min-width:28px;height:30px}.studio-section-heading h2,.studio-about>h2{font-size:30px}.studio-contact h2{font-size:26px}}
 @media(max-width:420px){.brand{font-size:23px;gap:6px}.brand-face{font-size:28px;min-width:27px}.studio-section-heading h2,.studio-about>h2{font-size:28px}.studio-contact h2{font-size:25px}}
+
+@font-face{font-family:'Cabin Sketch';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/cabin-sketch-bold.ttf') format('truetype')}
+.board-copy h1{font-family:'Cabin Sketch',cursive;font-weight:700;font-size:clamp(80px,12.5vw,160px);letter-spacing:-.035em}
+@media(max-width:760px){.board-copy h1{font-size:clamp(62px,13vw,98px)}}
+@media(max-width:420px){.board-copy h1{font-size:clamp(48px,15vw,63px)}}
