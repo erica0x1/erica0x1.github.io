@@ -26,3 +26,9 @@ Prompt: Preserve the distinctive ornate distressed Beyond Wonderland title lette
 Mode: built-in imagegen edit. Output: `images/alice-cover-v4.webp`.
 
 Black leafless geometric trees, small red flowers and red light bars now follow actual red-level references. The gray/red/black bottle is reduced to a handheld size. The original ornate ivory/red lettering style is retained. See [the complete final prompt and input record](alice-cover-v4-prompt.md).
+
+## Line by Line v3 — full illustrated cover
+
+Mode: built-in imagegen edit (compositing). Output: `images/line-by-line-cover-v3.webp`.
+
+Combines Erica's supplied `Logo.png` wordmark and `Cover.png` team illustration in a full 3:2 cover. Homepage cards fill their image area instead of displaying the old narrow banner. See [the complete final prompt and input record](line-by-line-cover-v3-prompt.md).

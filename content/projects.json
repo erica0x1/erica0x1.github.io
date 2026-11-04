@@ -206,8 +206,8 @@
     "role": "Level Designer",
     "context": "AGP · Team project",
     "platform": "PC · Unity",
-    "cover": "line-by-line-cover-v2",
-    "coverAlt": "Line by Line original team title artwork, with crossword letters, character silhouettes, and yellow crime-scene tape.",
+    "cover": "line-by-line-cover-v3",
+    "coverAlt": "Line by Line title over the team's illustrated cover: a silhouetted detective, surrounding hands, theatre and evidence panels, and sweeping yellow brushstrokes.",
     "summary": "Designing readable spaces for a detective story solved through crosswords.",
     "intro": "Line by Line is a USC Advanced Games Project: a third-person detective game in which clues and conversations feed into crossword-based deductions. I contribute as a level designer, working on the theatre's spaces, navigation, clue placement, and camera framing.",
     "links": [],
@@ -257,7 +257,7 @@
     "year": "2026",
     "teamSize": "Team project",
     "duration": "Ongoing",
-    "cardFit": "contain"
+    "cardFit": "cover"
   },
   {
     "slug": "last-call",
