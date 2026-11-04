@@ -7,7 +7,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <section class="studio-hero wrap" aria-labelledby="hero-title">
     <div class="blackboard-frame"><img class="holiday-ornaments" src="assets/studio/holiday-ornaments.svg" alt="" aria-hidden="true" draggable="false">
       <div class="blackboard" data-blackboard>
-        <div class="board-copy"><h1 id="hero-title">Erica Lin.</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Developer</span></li></ul></div>
+        <div class="board-copy"><h1 id="hero-title">Erica Lin</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Developer</span></li></ul></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
         <div class="board-cursor-clip" aria-hidden="true"><div class="board-cursor"><img src="assets/studio/chalk.webp" alt=""></div></div>
         <div class="board-tool-row"><span class="board-hint" id="board-hint">leave a little doodle ↘</span><div class="board-tools" role="group" aria-label="Chalkboard tools"><button class="chalk-tool" type="button" data-board-tool="chalk" aria-label="Pick up the chalk" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/chalk.webp" alt="A piece of white chalk" draggable="false"></button><button class="eraser-tool" type="button" data-board-tool="eraser" aria-label="Pick up the eraser" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/eraser.webp" alt="A wooden chalkboard eraser with charcoal felt" draggable="false"></button></div></div>
