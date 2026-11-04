@@ -1,0 +1,112 @@
+[
+  {
+    "image": "alice-cover-v3",
+    "source": "Imagegen edit; see cover-generation.md",
+    "frame": null
+  },
+  {
+    "image": "line-by-line-cover-v2",
+    "source": "https://mfzhou.carrd.co/assets/images/gallery07/7751314d_original.jpg",
+    "frame": null
+  },
+  {
+    "image": "line-by-line-inspection",
+    "source": "https://mfzhou.carrd.co/assets/images/gallery06/299a93a5_original.gif",
+    "frame": 97
+  },
+  {
+    "image": "line-by-line-crossword",
+    "source": "https://mfzhou.carrd.co/assets/images/gallery06/00ae0bf0_original.gif",
+    "frame": 172
+  },
+  {
+    "image": "line-by-line-journal",
+    "source": "https://mfzhou.carrd.co/assets/images/gallery06/b7aa46bb_original.gif",
+    "frame": 193
+  },
+  {
+    "image": "line-by-line-dialogue",
+    "source": "https://mfzhou.carrd.co/assets/images/gallery06/528d42d9_original.gif",
+    "frame": 131
+  },
+  {
+    "image": "alice-drink",
+    "source": "Dear Little Alice / Validation/RouteAccess-DrinkPrompt.png",
+    "frame": null
+  },
+  {
+    "image": "alice-small-door",
+    "source": "Dear Little Alice / Validation/03-Entrance-Small.png",
+    "frame": null
+  },
+  {
+    "image": "alice-false-exit",
+    "source": "Dear Little Alice / Validation/04-False-Exit.png",
+    "frame": null
+  },
+  {
+    "image": "alice-floor-opening",
+    "source": "Dear Little Alice / Validation/04c-Paper-Floor-Opening.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-foundation-start",
+    "source": "Sleepwalk / ValidationOutput/01-start.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-foundation-bridge",
+    "source": "Sleepwalk / ValidationOutput/03-bridge-open.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-reflection-fold",
+    "source": "Sleepwalk / Library/DreamerFoundationChecks/VerifiedProject/ValidationOutput/level01-fold-30.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-reflection-path",
+    "source": "Sleepwalk / Library/DreamerFoundationChecks/VerifiedProject/ValidationOutput/level01-first-crossing.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-mirror-start",
+    "source": "Sleepwalk / Library/DreamerFoundationChecks/VerifiedProject/ValidationOutput/guidance-runtime-stage-0.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-mirror-turn",
+    "source": "Sleepwalk / Library/DreamerFoundationChecks/VerifiedProject/ValidationOutput/guidance-runtime-stage-2.png",
+    "frame": null
+  },
+  {
+    "image": "sleepwalk-surface-feedback",
+    "source": "Sleepwalk validation capture / level03-standing-feedback.png",
+    "frame": null
+  },
+  {
+    "image": "to-rei-room-gameplay",
+    "source": "https://ericalin.itch.io/to-rei",
+    "capture": "Published WebGL build; local capture without gameplay changes"
+  },
+  {
+    "image": "to-rei-inspect-record",
+    "source": "https://ericalin.itch.io/to-rei",
+    "capture": "Published WebGL build; local capture without gameplay changes"
+  },
+  {
+    "image": "to-rei-code-puzzle",
+    "source": "https://ericalin.itch.io/to-rei",
+    "capture": "Published WebGL build; local capture without gameplay changes"
+  },
+  {
+    "image": "to-rei-letters-gameplay",
+    "source": "https://ericalin.itch.io/to-rei",
+    "capture": "Published WebGL build; local capture without gameplay changes"
+  },
+  {
+    "image": "to-rei-evidence-gameplay",
+    "source": "https://ericalin.itch.io/to-rei",
+    "capture": "Published WebGL build; local capture without gameplay changes"
+  }
+]

@@ -172,7 +172,7 @@
     const canvas=board.querySelector('#chalk-canvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
     const cursor=board.querySelector('.board-cursor'),cursorImage=cursor.querySelector('img');
     const toolButtons=[...board.querySelectorAll('[data-board-tool]')];
-    const title=board.querySelector('h1'),intro=board.querySelector('.board-copy p'),hint=board.querySelector('.board-hint');
+    const title=board.querySelector('h1'),roleLabels=[...board.querySelectorAll('.board-roles span')],hint=board.querySelector('.board-hint');
     let w=0,h=0,dpr=1,tool=null,drawing=false,draggingTool=false,last=null,revealFrame=0,cursorFrame=0;
     let cursorTarget={x:0,y:0},cursorPos={x:0,y:0},inside=false,ready=false;
     // A repeatable dry pigment pattern leaves the board visible between chalk grains.
@@ -184,11 +184,15 @@
       if(!w||!h)return;
       cancelAnimationFrame(revealFrame);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,w,h);
       const rect=board.getBoundingClientRect();
-      for(const el of [title,intro]){
+      for(const el of [title,...roleLabels]){
         const style=getComputedStyle(el),r=el.getBoundingClientRect(),size=parseFloat(style.fontSize),lh=parseFloat(style.lineHeight)||size*1.5;
         ctx.font=`${style.fontWeight} ${size}px ${style.fontFamily}`;ctx.letterSpacing=style.letterSpacing==='normal'?'0px':style.letterSpacing;ctx.textBaseline='alphabetic';ctx.fillStyle=el===title?'#efeee3':'#e0e5d8';
         const metrics=ctx.measureText('Mg'),baseline=(lh-metrics.actualBoundingBoxAscent-metrics.actualBoundingBoxDescent)/2+metrics.actualBoundingBoxAscent;
         const lines=el.innerText.split('\n');lines.forEach((line,i)=>ctx.fillText(line,r.left-rect.left,r.top-rect.top+baseline+i*lh));
+        if(el!==title){
+          const x=r.left-rect.left,y=r.bottom-rect.top+3;
+          ctx.strokeStyle='#ccd7c3';ctx.lineWidth=.9;ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+r.width*.48,y+1.8,x+r.width,y-.8);ctx.stroke();
+        }
       }
       ctx.letterSpacing='0px';
       const data=ctx.getImageData(0,0,canvas.width,canvas.height);let seed=73471;

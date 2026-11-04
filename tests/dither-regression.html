@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dither compositing regression checks</title><link rel="stylesheet" href="../studio.css?v=5">
-<style>body{padding:24px;max-width:1000px;margin:auto}h1{font:32px Georgia}button{padding:12px 20px}#fixtures{display:flex;gap:20px;margin:20px 0}#fixtures a{display:block;width:160px}#fixtures .studio-project-image{height:100px;aspect-ratio:auto}#results{white-space:pre-wrap;font:14px/1.6 monospace}.pass{color:#276237}.fail{color:#a13330}</style>
-<script src="../studio.js?v=5" defer></script></head><body>
+<title>Dither compositing regression checks</title><link rel="stylesheet" href="../studio.css?v=7">
+<style>body{padding:24px;max-width:1000px;margin:auto}h1{font:32px Georgia}button{padding:12px 20px}#fixtures{display:grid;grid-template-columns:repeat(3,160px);gap:20px;margin:20px 0}#fixtures a{display:block;width:160px}#fixtures .studio-project-image{height:100px;aspect-ratio:auto}#results{white-space:pre-wrap;font:14px/1.6 monospace}.pass{color:#276237}.fail{color:#a13330}</style>
+<script src="../studio.js?v=6" defer></script></head><body>
 <h1>Dither compositing regression checks</h1>
 <p>Exercises the production shader and production pointer lifecycle. No mock WebGL renderer.</p>
 <button id="run" type="button">Run regression checks</button>
@@ -10,6 +10,12 @@
 <a href="#results"><div class="studio-project-image fit-contain" data-dither><img src="../assets/images/spatial-tinting-itch-cover.webp" alt="Spatial Tinting"><canvas class="dither-layer"></canvas></div></a>
 <a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/sleepwalk-cover.webp" alt="Sleepwalk"><canvas class="dither-layer"></canvas></div></a>
 <a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/to-rei-cover.webp" alt="To Rei"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/alice-cover-v3.webp" alt="Dear Little Alice"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/line-by-line-cover-v2.webp" alt="Line by Line"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/last-call-cover-v2.webp" alt="Last Call"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/melodic-function-itch-cover.webp" alt="Melodic Function"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/dismember-cover.webp" alt="Dismember"><canvas class="dither-layer"></canvas></div></a>
+<a href="#results"><div class="studio-project-image" data-dither><img src="../assets/images/makeup-cover.webp" alt="Makeup Class"><canvas class="dither-layer"></canvas></div></a>
 </div><pre id="results" role="status">Ready.</pre>
 <script type="module">
 const output=document.querySelector('#results'),button=document.querySelector('#run');
@@ -21,7 +27,7 @@ button.addEventListener('click',async()=>{
   const log=message=>{output.textContent+=message+'\n';};
   const check=async(name,fn)=>{await fn();passed++;log('PASS '+name);};
   try{
-    const source=await(await fetch('../studio.js?v=5')).text();
+    const source=await(await fetch('../studio.js?v=6')).text();
     const vertex=source.match(/const vertexSource=`([\s\S]*?)`;/)[1];
     const fragment=source.match(/const fragmentSource=`([\s\S]*?)`;/)[1];
     function pixels(width,height,reveal,mediump=false,legacy=false,contain=false){
@@ -63,7 +69,7 @@ button.addEventListener('click',async()=>{
     await check('contained artwork has no shader in its letterbox margins',()=>{const data=pixels(300,300,1,false,false,true);assert(data[(40*300+150)*4+3]===0,'Effect painted outside contained artwork');assert(data[(150*300+150)*4+3]>240,'Contained artwork center missing');});
     const surfaces=[...document.querySelectorAll('[data-dither]')];
     await waitFor(()=>surfaces.every(s=>s.dataset.effect),'Effects did not initialize');
-    await check('all three production overlays are hidden before interaction',()=>assert(surfaces.every(s=>getComputedStyle(s.querySelector('canvas')).opacity==='0'),'An idle overlay is visible'));
+    await check('all nine production overlays are hidden before interaction',()=>assert(surfaces.every(s=>getComputedStyle(s.querySelector('canvas')).opacity==='0'),'An idle overlay is visible'));
     for(let i=0;i<surfaces.length;i++){
       const surface=surfaces[i],canvas=surface.querySelector('canvas');
       const move=()=>{const r=surface.getBoundingClientRect();surface.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,pointerType:'mouse',clientX:r.left+r.width/2,clientY:r.top+r.height/2}));};

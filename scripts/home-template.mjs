@@ -1,13 +1,13 @@
 export function renderHome({projects,esc,image,head,header,tail}) {
   const featured=['spatial-tinting','sleepwalk','to-rei'].map(slug=>projects.find(p=>p.slug===slug));
   const rest=projects.filter(p=>!featured.includes(p));
-  const tile=(p,i,shader=false)=>`<article class="studio-project ${i===0&&shader?'studio-feature':''}" data-game-category="${p.category}"><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}"${shader?' data-dither':''}><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${shader?'eager':'lazy'}" decoding="async">${shader?'<canvas class="dither-layer" aria-hidden="true"></canvas>':''}<span class="project-open" aria-hidden="true">↗</span></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${p.solo?'Solo project · ':''}${esc(p.role)}${p.slug==='line-by-line'?' · USC AGP':''}</p></div></a></article>`;
+  const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas><span class="project-open" aria-hidden="true">↗</span></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${p.solo?'Solo project · ':''}${esc(p.role)}${p.slug==='line-by-line'?' · USC AGP':''}</p></div></a></article>`;
   return `${head('Erica Lin — Games & little worlds','Games, spaces, and interactive stories by Erica Lin. Game and level design at USC.').replace('<body>','<body class="studio-home">')}${header()}
 <main id="main">
   <section class="studio-hero wrap" aria-labelledby="hero-title">
     <div class="blackboard-frame"><img class="holiday-ornaments" src="assets/studio/holiday-ornaments.svg" alt="" aria-hidden="true" draggable="false">
       <div class="blackboard" data-blackboard>
-        <div class="board-copy"><h1 id="hero-title">Erica Lin.</h1><p>Game & level designer at USC.<br>Spaces to explore.<br>Stories to piece together.</p></div>
+        <div class="board-copy"><h1 id="hero-title">Erica Lin.</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Developer</span></li></ul></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
         <div class="board-cursor" aria-hidden="true"><img src="assets/studio/chalk.webp" alt=""></div>
         <div class="board-tool-row"><span class="board-hint" id="board-hint">leave a little doodle ↘</span><div class="board-tools" role="group" aria-label="Chalkboard tools"><button class="chalk-tool" type="button" data-board-tool="chalk" aria-label="Pick up the chalk" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/chalk.webp" alt="A piece of white chalk" draggable="false"></button><button class="eraser-tool" type="button" data-board-tool="eraser" aria-label="Pick up the eraser" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/eraser.webp" alt="A wooden chalkboard eraser with charcoal felt" draggable="false"></button></div></div>
@@ -19,7 +19,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
     <div class="studio-section-heading"><h2 id="work-title">Selected work</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
     <p class="sr-only" aria-live="polite" data-work-status>Showing 3 selected games.</p>
     <div class="selected-grid">${featured.map((p,i)=>tile(p,i,true)).join('')}</div>
-    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>View all 9 games</span><span class="toggle-mark" aria-hidden="true">+</span></button><span class="handwritten">a few more worlds to get lost in</span></div>
+    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>View all 9 games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
     <div class="more-games" id="more-games" inert><div class="more-games-inner"><div class="archive-grid">${rest.map((p,i)=>tile(p,i)).join('')}</div></div></div>
   </section>
   <section class="studio-about wrap" id="about" aria-labelledby="about-title">
@@ -42,6 +42,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify ↗</a></section>
-<script src="studio.js?v=5" defer></script>
+<script src="studio.js?v=6" defer></script>
 ${tail('')}`;
 }

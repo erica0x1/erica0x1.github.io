@@ -26,7 +26,8 @@
     const trigger = images[index];
     preview.src = trigger.dataset.lightbox;
     preview.alt = trigger.dataset.caption;
-    caption.textContent = trigger.dataset.caption;
+    caption.textContent = trigger.dataset.imageGroup==='portfolio'?trigger.dataset.caption:'';
+    caption.hidden = !caption.textContent;
     counter.textContent = `${index + 1} / ${images.length}`;
     resetZoom();
   };

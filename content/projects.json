@@ -35,17 +35,28 @@
     ],
     "gallery": [
       {
-        "image": "to-rei-hospital",
-        "caption": "Hospital room environment artwork."
+        "image": "to-rei-room-gameplay",
+        "caption": "Exploring the hospital room and its inspectable objects."
+      },
+      {
+        "image": "to-rei-inspect-record",
+        "caption": "Inspecting the patient record to find a clue."
+      },
+      {
+        "image": "to-rei-code-puzzle",
+        "caption": "Using a discovered number to solve the drawer lock."
+      },
+      {
+        "image": "to-rei-letters-gameplay",
+        "caption": "Reading the letters found inside the unlocked drawer."
+      },
+      {
+        "image": "to-rei-evidence-gameplay",
+        "caption": "Revisiting collected clues through the evidence interface."
       },
       {
         "image": "to-rei-pool",
-        "caption": "Swimming pool environment artwork."
-      },
-      {
-        "image": "to-rei-ending",
-        "caption": "Ending artwork — story spoilers.",
-        "spoiler": true
+        "caption": "The swimming pool environment."
       }
     ],
     "year": "2026",
@@ -90,22 +101,41 @@
     ],
     "gallery": [
       {
+        "image": "sleepwalk-foundation-start",
+        "caption": "Paired characters face a disconnected route."
+      },
+      {
+        "image": "sleepwalk-foundation-bridge",
+        "caption": "Interacting with the station forms the missing bridge."
+      },
+      {
+        "image": "sleepwalk-reflection-fold",
+        "caption": "Folding a surface changes the connection between platforms."
+      },
+      {
+        "image": "sleepwalk-reflection-path",
+        "caption": "Moving both characters along the newly connected path."
+      },
+      {
         "image": "sleepwalk-cover",
-        "caption": "Rolling Girl level — development view, November 2026."
+        "caption": "Navigating circles and crescents in Rolling Girl."
       },
       {
-        "image": "sleepwalk-overhead",
-        "caption": "The completed map seen from above."
+        "image": "sleepwalk-surface-feedback",
+        "caption": "The occupied surface darkens before a rotation."
       },
       {
-        "image": "sleepwalk-finale",
-        "caption": "Level geometry becomes the ending composition.",
-        "spoiler": true
+        "image": "sleepwalk-mirror-start",
+        "caption": "Two characters occupy mirrored spaces."
+      },
+      {
+        "image": "sleepwalk-mirror-turn",
+        "caption": "Turning the geometry changes access to the next goal."
       }
     ],
     "year": "2026",
     "teamSize": "2 (Pair)",
-    "duration": "Ongoing"
+    "duration": "17 days"
   },
   {
     "slug": "dear-little-alice",
@@ -116,8 +146,8 @@
     "role": "Level & Interaction Design",
     "context": "Traveller project",
     "platform": "PC · Unity",
-    "cover": "alice-cover-v2",
-    "coverAlt": "Dear Little Alice promotional cover: an uncanny small doorway, paper maze walls, and the red-banded bottle.",
+    "cover": "alice-cover-v3",
+    "coverAlt": "Dear Little Alice: ornate ivory and red title lettering above a paper maze, a tiny doorway, a giant key, and a bottle.",
     "summary": "A small doorway. A changing sense of scale. An exit that asks you to look again.",
     "intro": "A surreal first-person exploration game that uses scale, navigation, and shifting environmental meaning. An uncanny forest leads toward a small doorway; shrinking changes what the player can access and how the surrounding space feels.",
     "links": [],
@@ -139,20 +169,27 @@
     "gallery": [
       {
         "image": "alice-entrance",
-        "caption": "Approaching the maze at normal size — October 2026 development capture."
+        "caption": "The tiny maze entrance viewed at normal size."
       },
       {
-        "image": "alice-bottle",
-        "caption": "The bottle beside the small entrance."
+        "image": "alice-drink",
+        "caption": "The bottle interaction that changes the player’s scale."
+      },
+      {
+        "image": "alice-small-door",
+        "caption": "Entering the same doorway after shrinking."
       },
       {
         "image": "alice-maze",
-        "caption": "Navigating the maze after shrinking."
+        "caption": "Navigating between the tall playing-card walls."
       },
       {
-        "image": "alice-storybook",
-        "caption": "The storybook reveal reframes the journey.",
-        "spoiler": true
+        "image": "alice-false-exit",
+        "caption": "Approaching the apparent exit."
+      },
+      {
+        "image": "alice-floor-opening",
+        "caption": "The paper floor opens into a rabbit hole."
       }
     ],
     "year": "2026",
@@ -169,8 +206,8 @@
     "role": "Level Designer",
     "context": "AGP · Team project",
     "platform": "PC · Unity",
-    "cover": "line-by-line-cover",
-    "coverAlt": "Development view of a theatre catwalk, control booth, and seating in Line by Line.",
+    "cover": "line-by-line-cover-v2",
+    "coverAlt": "Line by Line original team title artwork, with crossword letters, character silhouettes, and yellow crime-scene tape.",
     "summary": "Designing readable spaces for a detective story solved through crosswords.",
     "intro": "Line by Line is a USC Advanced Games Project: a third-person detective game in which clues and conversations feed into crossword-based deductions. I contribute as a level designer, working on the theatre's spaces, navigation, clue placement, and camera framing.",
     "links": [],
@@ -192,22 +229,35 @@
     ],
     "gallery": [
       {
-        "image": "line-by-line-layout",
-        "caption": "Theatre layout study — October 2026 development capture."
+        "image": "line-by-line-crossword",
+        "caption": "Combining discovered words in the crossword interface."
       },
       {
-        "image": "line-by-line-booth",
-        "caption": "Control-booth approach and framing study — October 2026."
+        "image": "line-by-line-journal",
+        "caption": "Revisiting collected evidence in the detective’s journal."
+      },
+      {
+        "image": "line-by-line-dialogue",
+        "caption": "Questioning Margo through the dialogue interface."
+      },
+      {
+        "image": "line-by-line-inspection",
+        "caption": "Inspecting evidence in the theatre."
+      },
+      {
+        "image": "line-by-line-layout",
+        "caption": "The theatre layout and audience seating."
       },
       {
         "image": "line-by-line-catwalk",
-        "caption": "Catwalk camera study — October 2026."
+        "caption": "Navigating the theatre catwalk."
       }
     ],
     "note": "Images show development studies from October 2026, rather than the latest team build.",
     "year": "2026",
     "teamSize": "Team project",
-    "duration": "Ongoing"
+    "duration": "Ongoing",
+    "cardFit": "contain"
   },
   {
     "slug": "last-call",
@@ -262,14 +312,6 @@
         "caption": "Early print-and-play prototype — action cards, October 15, 2026."
       },
       {
-        "image": "last-call-prototype-02",
-        "caption": "Early prototype — server and bouncer actions."
-      },
-      {
-        "image": "last-call-prototype-03",
-        "caption": "Early prototype — manager actions."
-      },
-      {
         "image": "last-call-prototype-04",
         "caption": "Early prototype — night events and drink reference cards."
       }
@@ -314,6 +356,10 @@
       {
         "label": "Play on itch.io",
         "url": "https://ericalin.itch.io/spatial-tinting"
+      },
+      {
+        "label": "Watch on YouTube",
+        "url": "https://www.youtube.com/watch?v=jZOSDmLPhVQ"
       }
     ],
     "contributions": [
@@ -395,6 +441,10 @@
       {
         "label": "Play on itch.io",
         "url": "https://ericalin.itch.io/melodic-function"
+      },
+      {
+        "label": "Watch on YouTube",
+        "url": "https://www.youtube.com/watch?v=5aR3yCGDM5s"
       }
     ],
     "contributions": [
@@ -530,6 +580,10 @@
         "label": "Read the rulebook",
         "url": "makeup-class-rulebook.html",
         "internal": true
+      },
+      {
+        "label": "Watch on YouTube",
+        "url": "https://www.youtube.com/watch?v=P6_ls-V9dMs"
       }
     ],
     "contributions": [
@@ -537,12 +591,7 @@
       "Developed a physical game that connects resource choices with the pressures of beauty training."
     ],
     "sections": [],
-    "gallery": [
-      {
-        "image": "makeup-cover",
-        "caption": "The physical game: makeup-palette board, cards, and pieces."
-      }
-    ],
+    "gallery": [],
     "source": "https://ercxlin.wixsite.com/portfolio/portfolio-collections/games/makeup-class",
     "teamSize": "1 (Solo)",
     "duration": "20 weeks",
