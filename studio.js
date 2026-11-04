@@ -36,32 +36,6 @@
     }));
   }
 
-  const paperScene=document.querySelector('[data-paper-scene]');
-  if(paperScene){
-    const papers=document.querySelector('#personal-papers');
-    const buttons=[...document.querySelectorAll('[data-toggle-about]')];
-    const paperCards=[...papers.querySelectorAll('.personal-paper')];
-    const spacePapers=()=>{
-      let offset=0;
-      paperCards.forEach(card=>{card.style.setProperty('--paper-top',`${offset}px`);offset+=card.offsetHeight+42;});
-      paperScene.style.setProperty('--paper-stack-height',`${offset+70}px`);
-    };
-    const paperSizes=new ResizeObserver(spacePapers);
-    paperCards.forEach(card=>paperSizes.observe(card));
-    spacePapers();
-    buttons.forEach(button=>button.addEventListener('click',()=>{
-      const open=!paperScene.classList.contains('is-open');
-      const envelope=paperScene.querySelector('.paper-envelope');
-      if(open&&document.activeElement===envelope)buttons[0].focus();
-      envelope.inert=open;
-      paperScene.classList.toggle('is-open',open);
-      papers.inert=!open;papers.setAttribute('aria-hidden',String(!open));
-      buttons.forEach(b=>{b.setAttribute('aria-expanded',String(open));if(b.classList.contains('paper-envelope'))b.setAttribute('aria-label',open?'Close Erica’s personal folder':'Open Erica’s personal folder');});
-      document.querySelector('[data-about-label]').textContent=open?'tuck everything away':'open my little folder';
-      if(!open&&papers.contains(document.activeElement))buttons[0].focus();
-    }));
-  }
-
   // A soft, local Bayer-dither brush. Only runs while the pointer is nearby.
   const vertexSource=`attribute vec2 a_position; varying vec2 v_uv; void main(){v_uv=a_position*.5+.5;gl_Position=vec4(a_position,0.,1.);}`;
   const fragmentSource=`

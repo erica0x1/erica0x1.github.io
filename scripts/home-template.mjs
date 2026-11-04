@@ -23,15 +23,14 @@ export function renderHome({projects,esc,image,head,header,tail}) {
     <div class="more-games" id="more-games" inert><div class="more-games-inner"><div class="archive-grid">${rest.map((p,i)=>tile(p,i)).join('')}</div></div></div>
   </section>
   <section class="studio-about wrap" id="about" aria-labelledby="about-title">
-    <div class="about-heading"><div><p class="studio-kicker">off the screen</p><h2 id="about-title">A little more me.</h2></div><button type="button" class="quiet-button about-toggle-label" aria-controls="personal-papers" aria-expanded="false" data-toggle-about><span data-about-label>open my little folder</span><span aria-hidden="true"> ↗</span></button></div>
-    <div class="paper-scene" data-paper-scene>
-      <div class="personal-papers" id="personal-papers" inert aria-hidden="true">
-        <figure class="personal-paper portrait-paper" style="--paper-i:0;--paper-rotation:-5deg"><div class="tape" aria-hidden="true"></div><img src="${image('erica-portrait')}" alt="Erica Lin" loading="lazy"><figcaption>hi, i'm erica :)</figcaption><span class="paper-small">currently making games at USC</span></figure>
-        <article class="personal-paper letter-paper" style="--paper-i:1;--paper-rotation:2deg"><p class="paper-date">a note from my desk</p><h3>Hello, you.</h3><p>I’m Erica, a game designer and developer at USC.</p><p>I make spaces to explore, systems to figure out, and stories to piece together.</p><p>I’m drawn to that little moment when a place, a rule, or a relationship starts to make sense.</p><span class="paper-signature">erica</span></article>
-        <article class="personal-paper notebook-paper" style="--paper-i:2;--paper-rotation:5deg"><span class="paper-small">things on my worktable</span><h3>Always making.</h3><p>Spatial puzzles.<br>Quiet little stories.<br>Theatre layouts.<br>Games around a table.</p><div class="notebook-tags"><span>level design</span><span>game design</span><span>Unity</span><span>prototyping</span></div><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">find my games on itch.io ↗</a></article>
+    <h2 id="about-title">About me</h2>
+    <div class="about-layout">
+      <figure class="about-photo"><img src="${image('erica-portrait')}" alt="Erica Lin" loading="lazy" decoding="async" width="1300" height="1776"></figure>
+      <div class="about-bio">
+        <p>I'm an MS student in Game Design and Development at USC’s School of Cinematic Arts, with an undergraduate degree in Mathematics with Applied Mathematics from the University of Nottingham, UK.</p>
+        <p>I enjoy deck-builders like Dicey Dungeons and Slay the Spire, and story-driven games like OMORI and Doki Doki Literature Club. I also love rhythm games like maimai.</p>
+        <p>Outside of games, I’m a huge Vocaloid fan, love dancing, and get especially excited about Christmas.</p>
       </div>
-      <button class="paper-envelope" type="button" data-toggle-about aria-label="Open Erica's personal folder" aria-controls="personal-papers" aria-expanded="false"><span class="envelope-back"></span><span class="envelope-flap"></span><span class="envelope-front"><span class="envelope-stamp" aria-hidden="true"><img src="assets/studio/holly-stamp.svg" alt="" draggable="false"></span><span class="envelope-address">a little more me.</span><span class="envelope-subtitle">photos, notes & other little things</span></span></button>
-      <span class="envelope-caption handwritten" data-envelope-caption>there's a person behind the pixels.</span>
     </div>
   </section>
   <section class="studio-contact wrap" id="contact"><div><p class="studio-kicker">say hello</p><h2>Let’s make<br><em>something playful.</em></h2></div><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="tel:+12138544267">+1 (213) 854-4267 ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
@@ -42,6 +41,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify ↗</a></section>
-<script src="studio.js?v=6" defer></script>
+<script src="studio.js?v=7" defer></script>
 ${tail('')}`;
 }

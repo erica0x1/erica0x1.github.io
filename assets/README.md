@@ -32,3 +32,8 @@ Third 2026-11-03 refresh:
 - `alice-red-forest`, `alice-red-flowers`, `alice-red-heart`: actual player-camera renders from the existing saved red forest scene, captured in an isolated project copy. The original game was not modified; source and copy scene hashes match. No color grading or generative edits were applied to these gallery images.
 - `alice-cover-v4`: built-in imagegen promotional cover edit matching the red forest's bare angular black trees, small red flowers, red light bars, and actual bottle proportions. Original title lettering style retained. Full prompt in `alice-cover-v4-prompt.md`.
 - New screenshot origins and source hashes are recorded in `refresh-three-sources.json`.
+
+About and pixel identity refresh:
+- The About section uses Erica's approved three paragraphs verbatim and one existing portrait.
+- Pixelify Sans is served locally from `fonts/pixelify-sans.ttf`, with its SIL OFL in `fonts/PixelifySans-OFL.txt`. Source: https://github.com/google/fonts/tree/main/ofl/pixelifysans .
+- The pixel e SVG, ICO, PNG and touch icon share authored geometry in `scripts/build-icons.py`. The wordmark reads `erica lin :3`; its cat emoticon is visually separated and decorative for assistive technology.

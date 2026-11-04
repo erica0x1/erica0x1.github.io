@@ -9,7 +9,7 @@
 - Makeup Class 的实体照片图库已按要求撤下，等待 Erica 提供新照片；原设计图与规则书保留。
 - 继续补充其他项目的团队成员、音乐及第三方素材署名。Last Call 已按公开 credits 列出四位成员与职责。
 - To Rei、Dear Little Alice 和 Sleepwalk 的结局折叠区及原结局图已撤下，图库改为玩法画面。
-- 简历文件与个人介绍可在下一轮补充；当前没有空的简历下载按钮。
+- 简历文件可在下一轮补充；个人介绍已使用 Erica 确认的三段英文，配一张现有个人照片，等待新照片。
 
 ## 已处理
 
@@ -21,4 +21,4 @@
 - Erica 已确认新项目的周期：To Rei 8 days、Dear Little Alice 2 weeks、Sleepwalk 2 weeks、Line by Line Ongoing、Last Call 4 weeks；Sleepwalk 为双人合作。
 - 全部九个首页作品均带局部鼠标颗粒效果，包括展开列表和分类结果。
 - 三个旧独立项目已添加原有 YouTube 演示链接；图库不再显示说明小字。
-- About 内容和交互保持原样，等待另一轮个人介绍文案。
+- About 改为一张照片与三段已确认简介；电脑两栏、手机上下排列。
