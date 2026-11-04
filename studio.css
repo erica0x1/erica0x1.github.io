@@ -130,3 +130,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 @media(max-width:420px){.brand{font-size:24px;gap:6px}.brand-face{font-size:27px;min-width:29px;height:29px;padding-inline:3px}.nav{gap:14px}.header-inner{gap:12px}.studio-about>h2{font-size:38px}.about-photo{width:min(100%,290px)}.about-photo img{height:290px}}
 @media(max-width:360px){.brand{font-size:22px;gap:5px}.brand-face{font-size:25px;min-width:27px;height:27px}.nav{gap:10px;font-size:10px}.header-inner{gap:10px}}
 @media(prefers-reduced-motion:reduce){.more-games,.archive-grid .studio-project,.studio-radio,.brand-face{transition:none!important;transition-delay:0s!important}.brand:hover .brand-face{transform:rotate(-5deg)}}
+
+/* Shared pixel headings from the original portfolio. */
+@font-face{font-family:'Press Start 2P';src:url('assets/fonts/press-start-2p.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.brand{font-family:'Press Start 2P',monospace;font-size:19px;font-weight:400;letter-spacing:0;gap:10px}
+.brand-face{font-size:21px;font-weight:400;min-width:42px;height:32px;gap:0;padding:0;background:none;transform:none}
+.studio-section-heading h2,.studio-about>h2,.studio-contact h2{font:400 clamp(20px,2.3vw,28px)/1.6 'Press Start 2P',monospace;letter-spacing:0;text-transform:none}
+.studio-contact{display:block;padding-top:65px;padding-bottom:60px}
+.studio-contact h2{font-size:22px;margin-bottom:24px}
+.studio-contact-links{gap:12px;margin:0}
+.about-photo{background:transparent;padding:0;overflow:visible;max-width:340px}
+.about-photo img{height:450px;object-fit:contain}
+@media(max-width:760px){.brand{font-size:14px;gap:7px}.brand-face{font-size:17px;min-width:34px;height:26px}.studio-section-heading{align-items:flex-start;gap:18px;flex-wrap:wrap}.studio-section-heading h2,.studio-about>h2{font-size:20px}.studio-contact h2{font-size:20px}.about-photo{justify-self:center}.about-photo img{height:400px}.nav{gap:14px}}
+@media(max-width:420px){.brand{font-size:12px;gap:5px}.brand-face{font-size:15px;min-width:30px}.nav{gap:10px;font-size:10px}.header-inner{gap:8px}.studio-section-heading h2,.studio-about>h2{font-size:18px}.studio-contact h2{font-size:18px}.about-photo img{height:380px}}

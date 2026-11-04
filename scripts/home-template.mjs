@@ -16,16 +16,16 @@ export function renderHome({projects,esc,image,head,header,tail}) {
     <div class="board-foot"><button type="button" class="quiet-button" data-restore-board>↺ restore the board</button></div>
   </section>
   <section class="selected-work wrap" id="work" aria-labelledby="work-title">
-    <div class="studio-section-heading"><h2 id="work-title">Selected work</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
+    <div class="studio-section-heading"><h2 id="work-title">selected work</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
     <p class="sr-only" aria-live="polite" data-work-status>Showing 3 selected games.</p>
     <div class="selected-grid">${featured.map((p,i)=>tile(p,i,true)).join('')}</div>
     <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>View all 9 games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
     <div class="more-games" id="more-games" inert><div class="more-games-inner"><div class="archive-grid">${rest.map((p,i)=>tile(p,i)).join('')}</div></div></div>
   </section>
   <section class="studio-about wrap" id="about" aria-labelledby="about-title">
-    <h2 id="about-title">About me</h2>
+    <h2 id="about-title">about me !</h2>
     <div class="about-layout">
-      <figure class="about-photo"><img src="${image('erica-portrait')}" alt="Erica Lin" loading="lazy" decoding="async" width="1300" height="1776"></figure>
+      <figure class="about-photo"><img src="${image('erica-portrait-boo')}" alt="Erica Lin" loading="lazy" decoding="async" width="1084" height="2080"></figure>
       <div class="about-bio">
         <p>I'm an MS student in Game Design and Development at USC’s School of Cinematic Arts, with an undergraduate degree in Mathematics with Applied Mathematics from the University of Nottingham, UK.</p>
         <p>I enjoy deck-builders like Dicey Dungeons and Slay the Spire, and story-driven games like OMORI and Doki Doki Literature Club. I also love rhythm games like maimai.</p>
@@ -33,7 +33,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
       </div>
     </div>
   </section>
-  <section class="studio-contact wrap" id="contact"><h2>Contact me</h2><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
+  <section class="studio-contact wrap" id="contact"><h2>contact me</h2><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
 </main>
 <aside class="desk-companions" aria-label="Your little studio companions"><img class="cat-present" src="assets/studio/pixel-present.svg" alt="" aria-hidden="true" draggable="false">
   <div class="pet-bubble" role="status" aria-live="polite" data-pet-bubble>psst… pet me?</div>
