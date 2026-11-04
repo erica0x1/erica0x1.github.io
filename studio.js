@@ -243,7 +243,7 @@
     const release=()=>{drawing=false;draggingTool=false;last=null;};canvas.addEventListener('pointerup',release);canvas.addEventListener('pointercancel',release);
     toolButtons.forEach(button=>{
       button.addEventListener('click',()=>selectTool(button.dataset.boardTool));
-      button.addEventListener('pointerdown',e=>{e.preventDefault();selectTool(button.dataset.boardTool);button.setPointerCapture(e.pointerId);draggingTool=true;last=null;cursorPos=localPoint(e);});
+      button.addEventListener('pointerdown',e=>{e.preventDefault();selectTool(button.dataset.boardTool);button.setPointerCapture(e.pointerId);draggingTool=true;last=null;cursorPos=localPoint(e);follow(e);});
       button.addEventListener('pointermove',e=>{if(draggingTool)mark(follow(e));});
       button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);
     });

@@ -1,7 +1,7 @@
 export function renderHome({projects,esc,image,head,header,tail}) {
   const featured=['spatial-tinting','sleepwalk','to-rei'].map(slug=>projects.find(p=>p.slug===slug));
   const rest=projects.filter(p=>!featured.includes(p));
-  const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas><span class="project-open" aria-hidden="true">↗</span></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${p.solo?'Solo project · ':''}${esc(p.role)}${p.slug==='line-by-line'?' · USC AGP':''}</p></div></a></article>`;
+  const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas><span class="project-open" aria-hidden="true">↗</span></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${p.solo?'Solo project · ':''}${p.slug==='line-by-line'?'USC AGP · ':''}${esc(p.role)}</p></div></a></article>`;
   return `${head('Erica Lin — Games & little worlds','Games, spaces, and interactive stories by Erica Lin. Game and level design at USC.').replace('<body>','<body class="studio-home">')}${header()}
 <main id="main">
   <section class="studio-hero wrap" aria-labelledby="hero-title">
@@ -33,7 +33,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
       </div>
     </div>
   </section>
-  <section class="studio-contact wrap" id="contact"><div><p class="studio-kicker">say hello</p><h2>Let’s make<br><em>something playful.</em></h2></div><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="tel:+12138544267">+1 (213) 854-4267 ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
+  <section class="studio-contact wrap" id="contact"><h2>Contact me</h2><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu ↗</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></section>
 </main>
 <aside class="desk-companions" aria-label="Your little studio companions"><img class="cat-present" src="assets/studio/pixel-present.svg" alt="" aria-hidden="true" draggable="false">
   <div class="pet-bubble" role="status" aria-live="polite" data-pet-bubble>psst… pet me?</div>
@@ -41,6 +41,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><span class="mini-record" aria-hidden="true"></span><span>studio radio</span><span class="radio-plus" aria-hidden="true">+</span></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify ↗</a></section>
-<script src="studio.js?v=8" defer></script>
+<script src="studio.js?v=9" defer></script>
 ${tail('')}`;
 }
