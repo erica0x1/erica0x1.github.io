@@ -1,0 +1,7 @@
+# Cat music pose
+
+Generated with the built-in imagegen tool in edit mode, with a transparent background. Edit target: `cat-idle.webp`. Final asset: `cat-music.webp` (272 × 272, original alpha preserved). The original generated PNG remains in the Codex generated-images folder.
+
+## Final prompt
+
+Edit the supplied transparent pixel-art gray tabby kitten sprite to create ONE matching animation pose for a portfolio website. Keep identical character identity, head size, facial features, gray stripes, cream muzzle/chest, pink ears, outline palette and pixel scale. Same square canvas and same seated full-body placement, ear tips around 14% from top, feet around 93%, with transparent empty margins. The kitten cheerfully offers a silver compact disc held against the LOWER LEFT side of its chest (viewer left), with both small paws curling around the bottom edges. The disc is approximately 35% of canvas width, center around 44% canvas width and 66% canvas height. CD is pale silver/ivory with subtle pastel sage and rose reflections, a clearly visible center hole, pixel stepped circular edge. It is a CD, not vinyl. The kitten looks toward the viewer with bright open eyes and tiny cat smile. Preserve the original pose/body/tail as much as possible, only lift the forepaws enough to hold the CD. Clean crisp pixel clusters, no blur, no gradients, no anti-aliased painted look, no additional objects, no text or speech bubble, transparent background. Match provided sprite, not a new cat design.

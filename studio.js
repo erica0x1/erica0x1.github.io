@@ -262,10 +262,21 @@
 
   const radio=document.querySelector('#studio-radio'),radioToggle=document.querySelector('[data-radio-toggle]');
   if(radio&&radioToggle){
-    let loaded=false;
+    const companions=radioToggle.closest('.desk-companions');
+    let loaded=false,hovering=false;
+    function offerMusic(){
+      const offering=hovering||radioToggle.matches(':focus-visible');
+      companions.classList.toggle('is-offering',offering);
+    }
+    radioToggle.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch'){hovering=true;offerMusic();}});
+    radioToggle.addEventListener('pointerleave',()=>{hovering=false;offerMusic();});
+    radioToggle.addEventListener('focus',offerMusic);
+    radioToggle.addEventListener('blur',offerMusic);
     function toggleRadio(open){
       if(open&&!loaded){const iframe=document.createElement('iframe');iframe.src='https://open.spotify.com/embed/playlist/2PaJIekKDK5GO3qzfKL73n?utm_source=generator&theme=0';iframe.title='Erica’s studio playlist on Spotify';iframe.width='100%';iframe.height='152';iframe.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';iframe.loading='lazy';radio.querySelector('[data-spotify-holder]').append(iframe);loaded=true;}
       radio.inert=!open;radio.classList.toggle('is-open',open);radioToggle.setAttribute('aria-expanded',String(open));
+      radioToggle.setAttribute('aria-label',open?'Close Erica’s playlist':'Open Erica’s playlist');
+      companions.classList.toggle('is-music-open',open);
       if(!open&&radio.contains(document.activeElement))radioToggle.focus();
     }
     radioToggle.addEventListener('click',()=>toggleRadio(!radio.classList.contains('is-open')));

@@ -72,54 +72,67 @@
     "category": "digital",
     "eyebrow": "USC / Dreamer",
     "type": "Spatial puzzle",
-    "role": "Game & level design",
+    "role": "Gameplay Programmer & Technical Designer",
     "context": "Dreamer project",
     "platform": "PC · Unity",
     "cover": "sleepwalk-cover-v2.svg",
     "cardFit": "contain",
     "coverAlt": "Sleepwalk cover with its original repeated diagonal title, walking figure and tilted menu.",
-    "summary": "Find a shared path through reflection, inversion, and shifting perspectives.",
-    "intro": "A spatial puzzle project built around paired characters and changing geometry. Paths are made from simple graphic forms, but moving through them depends on understanding how the two sides of a space relate to one another.",
+    "summary": "Guide two characters through shifting geometry, where each solved space becomes an image.",
+    "intro": "Sleepwalk is a spatial puzzle game inspired by wowaka’s music and visual artwork. Two linked characters navigate mirrored paths, flip paired surfaces, and rotate fragments to connect their routes. Each chapter turns its completed level into a visual composition, leading to a final playable recollection of the mechanics.",
     "links": [],
     "contributions": [
-      "Developed spatial puzzles around paired movement, supported surfaces, and reversible transformations.",
-      "Iterated on goals and interaction feedback through playtesting.",
-      "Worked on endings that transform the completed level geometry into a final composition."
+      "Implemented the Unity gameplay systems: paired movement, surface flipping, fragment rotation, platform transfers, collision and reset behavior.",
+      "Refined level layouts, controls and interaction feedback, including occupied-surface highlights and responses to unavailable actions.",
+      "Designed and implemented short tutorials that introduce each mechanic through playable actions.",
+      "Designed Recollection, the final level, and implemented map-to-artwork endings, music interludes and scene transitions."
     ],
     "sections": [
       {
-        "title": "The surface is the interaction",
-        "body": "In the Rolling Girl level, both characters must stand on eligible paired surfaces before those surfaces can turn. The same shapes are both the route and the mechanism, making position part of every decision."
+        "title": "Learning through movement",
+        "body": "I separated the harder mechanics into small playable lessons: flip one pair of surfaces, rotate a single fragment, then cross between aligned platforms. In the main levels, subtle highlights and brief refusal animations help players read what they can interact with without revealing the route."
       },
       {
-        "title": "Feedback without giving away the route",
-        "body": "An occupied turning face gently darkens. An unavailable action makes the occupied surfaces briefly shake. These responses communicate what the space allows while leaving the sequence for the player to discover."
-      },
-      {
-        "title": "A level becomes an image",
-        "body": "The ending begins with the completed map. Its existing circles and crescents rotate and rearrange into a final illustration, connecting the puzzle's physical structure with its visual payoff."
+        "title": "From a solved space to an image",
+        "body": "I wanted the ending to grow out of the space the player had just solved. In Rolling Girl, the existing circles and crescents rotate and settle into the final artwork. For Recollection, I designed a short sequence that revisits earlier interactions, gradually reshaping the route into a faceted heart that joins and fills with color."
       }
     ],
     "gallery": [
       {
-        "image": "sleepwalk-foundation-start",
-        "caption": "Paired characters face a disconnected route."
-      },
-      {
         "image": "sleepwalk-foundation-bridge",
-        "caption": "Interacting with the station forms the missing bridge."
-      },
-      {
-        "image": "sleepwalk-cover",
-        "caption": "Navigating circles and crescents in Rolling Girl."
-      },
-      {
-        "image": "sleepwalk-mirror-start",
-        "caption": "Two characters occupy mirrored spaces."
+        "caption": "Foundation: activating the station creates a bridge for the paired characters."
       },
       {
         "image": "sleepwalk-mirror-turn",
-        "caption": "Turning the geometry changes access to the next goal."
+        "caption": "Reflection: turning paired geometry opens a route through mirrored spaces."
+      },
+      {
+        "image": "sleepwalk-rolling-route",
+        "caption": "Rolling Girl: paired characters navigate the circular and crescent-shaped surfaces."
+      },
+      {
+        "image": "sleepwalk-rolling-finale",
+        "caption": "Rolling Girl: the completed map settles into its final composition."
+      },
+      {
+        "image": "sleepwalk-cross-tutorial",
+        "caption": "Cross tutorial: learning to transfer between aligned platforms."
+      },
+      {
+        "image": "sleepwalk-refrain-route",
+        "caption": "Unhappy Refrain: rotating fragments at different heights to connect both routes."
+      },
+      {
+        "image": "sleepwalk-recollection-ribbons",
+        "caption": "Recollection: triangular platforms reshape into curved ribbons."
+      },
+      {
+        "image": "sleepwalk-recollection-joining",
+        "caption": "Recollection: the level geometry forms a split heart before the final joining."
+      },
+      {
+        "image": "sleepwalk-recollection-finale",
+        "caption": "Recollection: the joined heart gradually fills with color."
       }
     ],
     "year": "2026",
