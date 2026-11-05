@@ -138,7 +138,12 @@
     "coverAlt": "Dear Little Alice promotional cover with its ornate ivory and red title, bare black trees, glowing red flowers and light posts, a tiny maze doorway, and a small gray-and-red bottle.",
     "summary": "A small doorway. A changing sense of scale. An exit that asks you to look again.",
     "intro": "A surreal first-person exploration game that uses scale, navigation, and shifting environmental meaning. An uncanny forest leads toward a small doorway; shrinking changes what the player can access and how the surrounding space feels.",
-    "links": [],
+    "links": [
+      {
+        "label": "Play on itch.io",
+        "url": "https://ericalin.itch.io/dear-little-alice"
+      }
+    ],
     "contributions": [
       "Developed the forest-to-maze exploration sequence and the change of scale at the doorway.",
       "Iterated on environmental guidance, route access, and the readability of the drink interaction.",
