@@ -213,3 +213,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.blackboard-frame:hover .board-paper-stars{animation:ornament-sway 2.4s ease-in-out}}
 @media(max-width:760px){.board-paper-chain{left:8px;right:8px;top:-3px}.board-paper-stars{width:43px;left:1px;top:4px}.holiday-ornaments{width:61px;right:10px;top:-6px}}
 @media(max-width:420px){.board-paper-stars{width:34px}.holiday-ornaments{width:48px;right:8px;top:-5px}}
+
+/* A small vertical offset keeps the biography in place. */
+.about-photo{position:relative;top:14px}
