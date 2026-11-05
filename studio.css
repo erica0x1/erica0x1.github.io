@@ -156,3 +156,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .board-copy h1{font-family:'Cabin Sketch',cursive;font-weight:700;font-size:clamp(80px,12.5vw,160px);letter-spacing:-.035em}
 @media(max-width:760px){.board-copy h1{font-size:clamp(62px,13vw,98px)}}
 @media(max-width:420px){.board-copy h1{font-size:clamp(48px,15vw,63px)}}
+
+@media(hover:hover) and (pointer:fine){body{cursor:url('assets/studio/holly-cursor.svg') 3 2,auto}a,button,summary,[role=button]{cursor:url('assets/studio/holly-cursor.svg') 3 2,pointer}.blackboard.tool-active #chalk-canvas{cursor:none}.board-tools button{cursor:grab}.board-tools button:active{cursor:grabbing}.portfolio-pages button,[data-lightbox]{cursor:zoom-in}}
