@@ -29,3 +29,9 @@ These are original generated assets guided by the user's references; no Framer t
 ## Felt eraser interaction
 
 The chalkboard eraser uses a 92×34 CSS-pixel, softly worn rectangular felt footprint. Pressure varies across fibres, pigment is lifted gradually with distance-based strength, and a small amount of existing chalk is dragged into a faint smudge. Repeated passes also lift the residue. Empty board areas do not generate new dust. The cursor is clipped to the board/frame bounds so wiping or resizing cannot widen a mobile page.
+
+## Classroom Christmas details — November 5, 2026
+
+`candy-cane-cursor.svg` is a 44×48 red-and-cream candy cane with a green ribbon and no arrow. It uses a native browser cursor with hotspot (19, 7); chalk and eraser retain their existing tool behavior.
+
+`classroom-paper-chain.svg` and its mobile variant are code-authored alternating paper rings in berry, pine and warm cream, fixed with little paper-tape tabs. `classroom-paper-stars.svg` adds folded and cut-paper ornaments. These decorations do not intercept pointer input. The tree, present and snowflake in `studio.js` are drawn into the existing chalk canvas, including its pigment grain, so they can be erased and restored with the rest of the board. The vector and canvas additions do not use generated raster artwork.

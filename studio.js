@@ -203,6 +203,20 @@
       const steps=Math.max(1,Math.ceil(distance/4)),flow=1-Math.exp(-2.8*(distance/steps)/contact);
       for(let i=1;i<=steps;i++){const t=i/steps;feltStamp({x:prev.x+dx*t,y:prev.y+dy*t},flow,ux,uy);}
     }
+    function holidayChalk(){
+      // These drawings share the chalk layer, so the felt eraser can remove them.
+      ctx.save();ctx.translate(w*(w>700?.68:.62),h-52);ctx.scale(w>700?1:.66,w>700?1:.66);
+      ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=2.3;ctx.strokeStyle='#b6caa5';
+      ctx.beginPath();ctx.moveTo(0,-66);[[-14,-46],[-7,-46],[-23,-27],[-12,-27],[-30,-6],[28,-6],[11,-27],[23,-27],[8,-46],[14,-46],[0,-66]].forEach(([x,y])=>ctx.lineTo(x,y));ctx.stroke();
+      ctx.strokeStyle='#e7d5ae';ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(-3,-5);ctx.lineTo(-3,3);ctx.lineTo(4,3);ctx.lineTo(4,-5);ctx.stroke();
+      ctx.beginPath();for(let i=0;i<10;i++){const angle=-Math.PI/2+i*Math.PI/5,r=i%2?3:7,x=Math.cos(angle)*r,y=-76+Math.sin(angle)*r;i?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.closePath();ctx.stroke();
+      ctx.strokeStyle='#cf8d83';ctx.lineWidth=1.9;ctx.beginPath();ctx.moveTo(-9,-43);ctx.quadraticCurveTo(1,-35,12,-37);ctx.moveTo(-18,-23);ctx.quadraticCurveTo(3,-15,20,-18);ctx.stroke();
+      ctx.fillStyle='#e7d5ae';[[-4,-51],[6,-29],[-11,-13],[15,-10]].forEach(([x,y])=>{ctx.beginPath();ctx.arc(x,y,1.9,0,Math.PI*2);ctx.fill();});
+      ctx.strokeStyle='#cf8d83';ctx.lineWidth=2;ctx.strokeRect(-55,-11,18,16);ctx.strokeStyle='#e1ddc7';ctx.lineWidth=1.3;ctx.beginPath();ctx.moveTo(-46,-12);ctx.lineTo(-46,5);ctx.moveTo(-55,-5);ctx.lineTo(-37,-5);ctx.moveTo(-46,-11);ctx.bezierCurveTo(-60,-22,-57,-8,-46,-11);ctx.bezierCurveTo(-35,-23,-34,-7,-46,-11);ctx.stroke();
+      ctx.strokeStyle='#d5dfd0';ctx.lineWidth=1.4;ctx.save();ctx.translate(48,-33);for(let i=0;i<3;i++){ctx.rotate(Math.PI/3);ctx.beginPath();ctx.moveTo(-8,0);ctx.lineTo(8,0);ctx.moveTo(-6,-2);ctx.lineTo(-4,0);ctx.lineTo(-6,2);ctx.moveTo(6,-2);ctx.lineTo(4,0);ctx.lineTo(6,2);ctx.stroke();}ctx.restore();
+      [[-51,-55],[48,-72]].forEach(([x,y])=>{ctx.beginPath();ctx.moveTo(x-3,y);ctx.lineTo(x+3,y);ctx.moveTo(x,y-4);ctx.lineTo(x,y+4);ctx.stroke();});
+      ctx.restore();
+    }
     function textLayer(animate=false){
       if(!w||!h)return;
       cancelAnimationFrame(revealFrame);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,w,h);
@@ -217,7 +231,7 @@
           ctx.strokeStyle='#ccd7c3';ctx.lineWidth=.9;ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+r.width*.48,y+1.8,x+r.width,y-.8);ctx.stroke();
         }
       }
-      ctx.letterSpacing='0px';
+      ctx.letterSpacing='0px';holidayChalk();
       const data=ctx.getImageData(0,0,canvas.width,canvas.height);let seed=73471;
       for(let i=3;i<data.data.length;i+=4){if(!data.data[i])continue;seed=(seed*1664525+1013904223)>>>0;const n=seed/4294967296;data.data[i]=Math.round(data.data[i]*(n<.07?0:.57+n*.43));}
       ctx.putImageData(data,0,0);board.classList.add('canvas-ready');
