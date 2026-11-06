@@ -225,10 +225,16 @@
         const style=getComputedStyle(el),r=el.getBoundingClientRect(),size=parseFloat(style.fontSize),lh=parseFloat(style.lineHeight)||size*1.5;
         ctx.font=`${style.fontWeight} ${size}px ${style.fontFamily}`;ctx.letterSpacing=style.letterSpacing==='normal'?'0px':style.letterSpacing;ctx.textBaseline='alphabetic';ctx.fillStyle=el===title?'#efeee3':'#e0e5d8';
         const metrics=ctx.measureText('Mg'),baseline=(lh-metrics.actualBoundingBoxAscent-metrics.actualBoundingBoxDescent)/2+metrics.actualBoundingBoxAscent;
-        const lines=el.innerText.split('\n');lines.forEach((line,i)=>ctx.fillText(line,r.left-rect.left,r.top-rect.top+baseline+i*lh));
-        if(el!==title){
-          const x=r.left-rect.left,y=r.bottom-rect.top+3;
-          ctx.strokeStyle='#ccd7c3';ctx.lineWidth=.9;ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+r.width*.48,y+1.8,x+r.width,y-.8);ctx.stroke();
+        if(el===title){
+          const lines=el.innerText.split('\n');lines.forEach((line,i)=>ctx.fillText(line,r.left-rect.left,r.top-rect.top+baseline+i*lh));
+        }else{
+          // Match each handwritten note's rotation while keeping it erasable.
+          // The transformed bounding box shares the untransformed box's center.
+          const angle=parseFloat(style.getPropertyValue('--chalk-tilt'))||0;
+          ctx.save();ctx.translate(r.left-rect.left+r.width/2,r.top-rect.top+r.height/2);
+          ctx.rotate(angle*Math.PI/180);
+          ctx.fillText(el.innerText,-el.offsetWidth/2,-el.offsetHeight/2+baseline);
+          ctx.restore();
         }
       }
       ctx.letterSpacing='0px';holidayChalk();
