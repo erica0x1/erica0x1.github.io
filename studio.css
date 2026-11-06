@@ -231,3 +231,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .meta .project-period{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.5}
 
 .studio-project-caption .card-period{white-space:nowrap}
+
+/* Readable game-type labels above each project title. */
+.project-header > .eyebrow{font-family:var(--sans);font-size:17px;font-weight:600;line-height:1.5;letter-spacing:.01em;text-transform:none;color:var(--accent)}
+@media(max-width:720px){.project-header > .eyebrow{font-size:15px}}

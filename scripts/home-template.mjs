@@ -2,7 +2,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   const featured=projects.slice(0,3);
   const rest=projects.slice(3);
   const cardDetails=p=>[
-    ...[p.solo?'Solo project':p.slug==='line-by-line'?`USC AGP · ${p.role}`:p.role,p.type].filter(Boolean).map(esc),
+    ...[p.solo?'Solo project':null,p.slug==='line-by-line'?'USC AGP':p.slug==='dismember'?'72-Hour Game Jam':null,p.role].filter(Boolean).map(esc),
     ...(p.period?[`<span class="card-period">${esc(p.period)}</span>`]:[])
   ].join(' · ');
   const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${cardDetails(p)}</p></div></a></article>`;
