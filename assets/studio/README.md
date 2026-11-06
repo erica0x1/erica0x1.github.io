@@ -22,9 +22,9 @@ These are original generated assets guided by the user's references; no Framer t
 
 `holiday-ornaments.svg`, `holly-stamp.svg` and `pixel-present.svg` are original code-authored vector decorations, added for Erica's love of Christmas and her long-standing red-and-green hair palette. Their palette uses muted berry red, pine green and cream. The ornaments sit outside the chalk drawing layer; decorative images do not intercept pointer input or add screen-reader noise. The corner sway is disabled with reduced motion. Red-and-green paper tape and small interface accents are defined in `studio.css`.
 
-## Erica's e. monogram
+## Erica's little Christmas tree
 
-`erica-logo.png` is a 512px export of the original code-authored `../../favicon.svg`: a rounded, handwritten lowercase e in pine green, with a berry-red dot on cream. `scripts/build-icons.py` exports matching browser favicon and home-screen PNG/ICO sizes from the same path geometry. This vector logo is not AI-generated raster artwork and uses no font dependency.
+`erica-logo.png` is a 512px export of the original code-authored `../../favicon.svg`: a small pixel Christmas tree in muted pine green, with berry-red baubles and a warm gold star on cream. It matches the pixel wordmark and desktop companion. `scripts/build-icons.py` exports SVG, browser PNG/ICO and home-screen icons from one 32px geometry on a 2px grid, keeping the silhouette readable at 16px. This vector logo uses no font dependency.
 
 ## Felt eraser interaction
 
