@@ -2,7 +2,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   const featured=projects.slice(0,3);
   const rest=projects.slice(3);
   const cardDetails=p=>[
-    ...[p.solo?'Solo project':null,p.slug==='line-by-line'?'USC AGP':p.slug==='dismember'?'72-Hour Game Jam':null,p.role].filter(Boolean).map(esc),
+    ...[p.slug==='line-by-line'?'USC AGP':null,p.solo?'Solo project':p.role].filter(Boolean).map(esc),
     ...(p.period?[`<span class="card-period">${esc(p.period)}</span>`]:[])
   ].join(' · ');
   const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${cardDetails(p)}</p></div></a></article>`;
@@ -11,7 +11,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <section class="studio-hero wrap" aria-labelledby="hero-title">
     <div class="blackboard-frame"><picture class="board-paper-chain" aria-hidden="true"><source media="(max-width:760px)" srcset="assets/studio/classroom-paper-chain-mobile.svg"><img src="assets/studio/classroom-paper-chain.svg" alt="" draggable="false"></picture><img class="board-paper-stars" src="assets/studio/classroom-paper-stars.svg" alt="" aria-hidden="true" draggable="false"><img class="holiday-ornaments" src="assets/studio/holiday-ornaments.svg" alt="" aria-hidden="true" draggable="false">
       <div class="blackboard" data-blackboard>
-        <div class="board-copy"><h1 id="hero-title">Erica Lin</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Developer</span></li></ul></div>
+        <div class="board-copy"><h1 id="hero-title">Erica Lin</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Systems Designer</span></li><li><span>Gameplay Programmer</span></li></ul></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
         <div class="board-cursor-clip" aria-hidden="true"><div class="board-cursor"><img src="assets/studio/chalk.webp" alt=""></div></div>
         <div class="board-tool-row"><span class="board-hint" id="board-hint">leave a little doodle ↘</span><div class="board-tools" role="group" aria-label="Chalkboard tools"><button class="chalk-tool" type="button" data-board-tool="chalk" aria-label="Pick up the chalk" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/chalk.webp" alt="A piece of white chalk" draggable="false"></button><button class="eraser-tool" type="button" data-board-tool="eraser" aria-label="Pick up the eraser" aria-pressed="false" aria-describedby="board-hint"><img src="assets/studio/eraser.webp" alt="A wooden chalkboard eraser with charcoal felt" draggable="false"></button></div></div>
@@ -20,11 +20,11 @@ export function renderHome({projects,esc,image,head,header,tail}) {
     <div class="board-foot"><button type="button" class="quiet-button" data-restore-board>↺ restore the board</button></div>
   </section>
   <section class="selected-work wrap" id="work" aria-labelledby="work-title">
-    <div class="studio-section-heading"><h2 id="work-title">selected work</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
+    <div class="studio-section-heading"><h2 id="work-title">my games</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
     <p class="sr-only" aria-live="polite" data-work-status>Showing ${featured.length} selected games.</p>
     <div class="selected-grid">${featured.map((p,i)=>tile(p,i,true)).join('')}</div>
-    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>view all games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
     <div class="more-games" id="more-games" inert><div class="more-games-inner"><div class="archive-grid">${rest.map((p,i)=>tile(p,i)).join('')}</div></div></div>
+    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>view all games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
   </section>
   <section class="studio-about wrap" id="about" aria-labelledby="about-title">
     <h2 id="about-title">about me !</h2>
