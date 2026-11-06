@@ -18,14 +18,14 @@
     const update=()=>{
       const open=category!=='all'||allExpanded;
       gamesToggle.setAttribute('aria-expanded',String(open));
-      gamesToggle.querySelector('[data-games-label]').textContent=open?'Show selected work':'View all 9 games';
+      gamesToggle.querySelector('[data-games-label]').textContent=open?'collapse':'view all games';
       more.inert=!open;more.classList.toggle('is-open',open);
       work.dataset.category=category;
       cards.forEach(card=>card.hidden=category!=='all'&&card.dataset.gameCategory!==category);
       selected.hidden=![...selected.children].some(card=>!card.hidden);
       gamesToggle.closest('.all-games-action').hidden=category!=='all';
       filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.workFilter===category)));
-      const count=category==='all'&&!open?3:cards.filter(card=>!card.hidden).length;
+      const count=category==='all'&&!open?selected.children.length:cards.filter(card=>!card.hidden).length;
       status.textContent=`Showing ${count} ${category==='all'&&!open?'selected':category==='all'?'':category} games.`;
     };
     gamesToggle.addEventListener('click',()=>{allExpanded=!allExpanded;update();});

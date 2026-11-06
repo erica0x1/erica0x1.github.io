@@ -172,12 +172,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .radio-toggle{position:absolute;left:0;bottom:0;z-index:3;width:104px;height:55px;padding:0;border:0;border-radius:15px;background:none;box-shadow:none;backdrop-filter:none;display:block;transform:none}
 .radio-toggle:hover{background:none;transform:none}
 .radio-toggle:focus-visible{outline:2px dashed #7c9276;outline-offset:2px}
-.pixel-cd{position:absolute;left:10px;bottom:6px;width:42px;height:42px;image-rendering:pixelated;transform:rotate(-13deg);transform-origin:center;transition:transform .55s var(--ease-out),opacity .2s ease .08s;filter:drop-shadow(2px 3px 0 #45413722);pointer-events:none}
+.pixel-cd{position:absolute;left:22px;bottom:6px;width:42px;height:42px;image-rendering:pixelated;transform:rotate(-13deg);transform-origin:center;transition:transform .55s var(--ease-out),opacity .2s ease .08s;filter:drop-shadow(2px 3px 0 #45413722);pointer-events:none}
 .music-bubble{position:absolute;right:0;bottom:116px;padding:7px 12px;background:#faf7eef5;color:#52624d;border:1px solid #daddcf;border-radius:13px 13px 3px 13px;font:17px var(--hand);white-space:nowrap;opacity:0;transform:translateY(8px) rotate(2deg);transition:opacity .25s ease,transform .45s var(--ease-out);pointer-events:none}
 .cat-frame.cat-music{transform:translateY(5px);transition:opacity .25s ease,transform .5s var(--ease-out)}
 .desk-companions:is(.is-offering,.is-music-open) .cat-frame{opacity:0;transition:opacity .22s ease .12s}
 .desk-companions:is(.is-offering,.is-music-open) .cat-frame.cat-music{opacity:1;transform:translateY(0);transition:opacity .25s ease .12s,transform .5s var(--ease-out)}
-.desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(58px,-22px) rotate(12deg) scale(.78);opacity:0;transition:transform .55s var(--ease-out),opacity .22s ease .15s}
+.desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(46px,-22px) rotate(12deg) scale(.78);opacity:0;transition:transform .55s var(--ease-out),opacity .22s ease .15s}
 .desk-companions:is(.is-offering,.is-music-open) .music-bubble{opacity:1;transform:translateY(0) rotate(-2deg);transition-delay:.15s}
 .desk-companions:is(.is-offering,.is-music-open) .pet-bubble,.desk-companions:is(.is-offering,.is-music-open) .pet-heart{opacity:0!important}
 .desk-companions:is(.is-offering,.is-music-open) .desktop-cat{transform:none}
@@ -186,8 +186,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
   .desk-companions{width:128px;height:100px}
   .desktop-cat{width:92px;height:92px}
   .radio-toggle{width:84px;height:43px}
-  .pixel-cd{width:34px;height:34px;left:7px;bottom:4px}
-  .desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(45px,-17px) rotate(12deg) scale(.78)}
+  .pixel-cd{width:34px;height:34px;left:15px;bottom:4px}
+  .desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(37px,-17px) rotate(12deg) scale(.78)}
   .cat-present{width:20px;right:0;bottom:0}
   .pet-bubble,.music-bubble{bottom:92px;font-size:15px}
   .studio-radio{bottom:162px}
@@ -200,8 +200,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
   .desk-companions{width:110px;height:86px}
   .desktop-cat{width:78px;height:78px}
   .radio-toggle{width:74px;height:37px}
-  .pixel-cd{width:30px;height:30px;left:6px;bottom:3px}
-  .desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(41px,-15px) rotate(12deg) scale(.78)}
+  .pixel-cd{width:30px;height:30px;left:14px;bottom:3px}
+  .desk-companions:is(.is-offering,.is-music-open) .pixel-cd{transform:translate(33px,-15px) rotate(12deg) scale(.78)}
   .pet-bubble,.music-bubble{bottom:80px}
   .studio-radio{bottom:150px}
 }
@@ -216,3 +216,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 
 /* A small vertical offset keeps the biography in place. */
 .about-photo{position:relative;top:14px}
+
+/* A brief curious lean between long rests; only the sprite moves, never its hitbox. */
+@keyframes cat-curious-lean{
+  0%,34%,62%,100%{transform:translateY(0) rotate(0)}
+  42%,48%{transform:translateY(-1px) rotate(-2.2deg)}
+  55%{transform:translateY(0) rotate(1.2deg)}
+}
+@media(prefers-reduced-motion:no-preference){
+  .desk-companions:not(.is-offering):not(.is-music-open) .desktop-cat:not([data-state=sleep]):not([data-state=pet]):not(:hover):not(:focus-visible) .cat-sprites{transform-origin:50% 94%;animation:cat-curious-lean 9s ease-in-out infinite}
+}

@@ -75,7 +75,7 @@
     "role": "Gameplay Programmer & Technical Designer",
     "context": "Dreamer project",
     "platform": "PC · Unity",
-    "cover": "sleepwalk-cover-v3",
+    "cover": "sleepwalk-cover-v4",
     "cardFit": "contain",
     "coverAlt": "Sleepwalk cover: a turquoise-haired figure with a faceted heart and repeated Sleepwalk lettering.",
     "summary": "Guide two characters through shifting geometry, where each solved space becomes an image.",
@@ -98,6 +98,10 @@
       }
     ],
     "gallery": [
+      {
+        "image": "sleepwalk-game-cover-20261106",
+        "caption": "Sleepwalk’s in-game cover and main menu."
+      },
       {
         "image": "sleepwalk-foundation-bridge",
         "caption": "Foundation: activating the station creates a bridge for the paired characters."
@@ -123,16 +127,16 @@
         "caption": "Unhappy Refrain: rotating fragments at different heights to connect both routes."
       },
       {
-        "image": "sleepwalk-recollection-ribbons",
-        "caption": "Recollection: triangular platforms reshape into curved ribbons."
+        "image": "sleepwalk-recollection-ribbons-20261106",
+        "caption": "Recollection: paired characters navigate the curved platforms and lower triangular fragments."
       },
       {
-        "image": "sleepwalk-recollection-joining",
-        "caption": "Recollection: the level geometry forms a split heart before the final joining."
+        "image": "sleepwalk-recollection-joining-20261106",
+        "caption": "Recollection: the completed split heart before the final joining."
       },
       {
-        "image": "sleepwalk-recollection-finale",
-        "caption": "Recollection: the joined heart gradually fills with color."
+        "image": "sleepwalk-recollection-finale-20261106",
+        "caption": "Recollection: the colored heart after the final zoom."
       }
     ],
     "year": "2026",
@@ -284,7 +288,7 @@
     "category": "tabletop",
     "eyebrow": "USC / Meaningful Play",
     "type": "Cooperative board game",
-    "role": "Designer + Producer",
+    "role": "Producer + Designer",
     "context": "Team project · Four-player game",
     "platform": "Tabletop · Online adaptation",
     "cover": "last-call-cover-v2",
@@ -299,10 +303,6 @@
       {
         "label": "Read the rules",
         "url": "https://yolanda699.github.io/Last-Call-Demo/rulebook.pdf"
-      },
-      {
-        "label": "Team credits",
-        "url": "https://yolanda699.github.io/Last-Call-Demo/credits.html"
       }
     ],
     "contributions": [
@@ -327,36 +327,33 @@
     ],
     "gallery": [
       {
-        "image": "last-call-prototype-01",
-        "caption": "Early print-and-play prototype — action cards, October 15, 2026."
+        "image": "last-call-online-board",
+        "caption": "Shared board: customer seats, rounds, revenue, night events and customer decks."
       },
       {
-        "image": "last-call-prototype-04",
-        "caption": "Early prototype — night events and drink reference cards."
+        "image": "last-call-online-mat-bar",
+        "caption": "Bartender player board: role power and planning slots for this round and the next."
+      },
+      {
+        "image": "last-call-online-bar-cocktail",
+        "caption": "Cocktail action: earning revenue increases intoxication and pressure."
+      },
+      {
+        "image": "last-call-online-bou-ride",
+        "caption": "Ride Home action: sending a customer home safely reduces pressure."
+      },
+      {
+        "image": "last-call-online-mat-bou",
+        "caption": "Bouncer player board: role power, action planning and target selection."
+      },
+      {
+        "image": "last-call-online-ev-drive",
+        "caption": "I Can Drive night event: intoxicated customers create additional pressure."
       }
     ],
-    "note": "The images document an early print-and-play prototype; later presentation notes describe further iterations.",
     "year": "2026",
     "teamSize": "4",
-    "duration": "4 weeks",
-    "credits": [
-      {
-        "name": "Erica Lin",
-        "role": "Designer + Producer"
-      },
-      {
-        "name": "Ryan Ontiveros",
-        "role": "Designer + Narrative"
-      },
-      {
-        "name": "Yolanda Liu",
-        "role": "Designer + Artist + Web Engineer"
-      },
-      {
-        "name": "Luna Lin",
-        "role": "Designer + QA"
-      }
-    ]
+    "duration": "4 weeks"
   },
   {
     "slug": "spatial-tinting",

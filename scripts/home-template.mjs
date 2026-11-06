@@ -1,6 +1,6 @@
 export function renderHome({projects,esc,image,head,header,tail}) {
-  const featured=['spatial-tinting','sleepwalk','dear-little-alice'].map(slug=>projects.find(p=>p.slug===slug));
-  const rest=projects.filter(p=>!featured.includes(p));
+  const featured=projects.slice(0,3);
+  const rest=projects.slice(3);
   const tile=(p,i,featured=false)=>`<article class="studio-project ${i===0&&featured?'studio-feature':''}" data-game-category="${p.category}"${p.slug==='line-by-line'?' style="--card-background:#39352e"':''}><a href="projects/${p.slug}.html"><div class="studio-project-image${p.cardFit==='contain'?' fit-contain':''}" data-dither><img src="${image(p.cover)}" alt="${esc(p.coverAlt)}" loading="${featured?'eager':'lazy'}" decoding="async"><canvas class="dither-layer" aria-hidden="true"></canvas></div><div class="studio-project-caption"><h3>${esc(p.title)}</h3><p>${p.solo?'Solo project · ':''}${p.slug==='line-by-line'?'USC AGP · ':''}${esc(p.role)}</p></div></a></article>`;
   return `${head('Erica Lin — Games & little worlds','Games, spaces, and interactive stories by Erica Lin. Game and level design at USC.').replace('<body>','<body class="studio-home">')}${header()}
 <main id="main">
@@ -17,9 +17,9 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   </section>
   <section class="selected-work wrap" id="work" aria-labelledby="work-title">
     <div class="studio-section-heading"><h2 id="work-title">selected work</h2><div class="work-filters" role="group" aria-label="Filter games by format"><button type="button" data-work-filter="all" aria-pressed="true">All</button><button type="button" data-work-filter="digital" aria-pressed="false">Digital</button><button type="button" data-work-filter="tabletop" aria-pressed="false">Tabletop</button></div></div>
-    <p class="sr-only" aria-live="polite" data-work-status>Showing 3 selected games.</p>
+    <p class="sr-only" aria-live="polite" data-work-status>Showing ${featured.length} selected games.</p>
     <div class="selected-grid">${featured.map((p,i)=>tile(p,i,true)).join('')}</div>
-    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>View all 9 games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
+    <div class="all-games-action"><button type="button" class="all-games-toggle" aria-expanded="false" aria-controls="more-games" data-toggle-games><span data-games-label>view all games</span><span class="toggle-mark" aria-hidden="true">+</span></button></div>
     <div class="more-games" id="more-games" inert><div class="more-games-inner"><div class="archive-grid">${rest.map((p,i)=>tile(p,i)).join('')}</div></div></div>
   </section>
   <section class="studio-about wrap" id="about" aria-labelledby="about-title">
@@ -33,7 +33,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
       </div>
     </div>
   </section>
-  <section class="studio-contact wrap" id="contact"><h2>contact me</h2><div class="studio-contact-links"><a href="mailto:ericalin@usc.edu">ericalin@usc.edu</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a></div></section>
+  <section class="studio-contact wrap" id="contact"><h2>contact me</h2><div class="studio-contact-links"><a href="mailto:ericaalin@outlook.com">ericaalin@outlook.com</a><a href="https://ericalin.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a></div></section>
 </main>
 <aside class="desk-companions" aria-label="Your little studio companions"><img class="cat-present" src="assets/studio/pixel-present.svg" alt="" aria-hidden="true" draggable="false">
   <div class="pet-bubble" role="status" aria-live="polite" data-pet-bubble>psst… pet me?</div>
@@ -42,6 +42,6 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   <button class="radio-toggle" type="button" aria-label="Open Erica’s playlist" aria-expanded="false" aria-controls="studio-radio" data-radio-toggle><img class="pixel-cd" src="assets/studio/pixel-cd.svg" alt="" draggable="false"></button>
 </aside>
 <section class="studio-radio" id="studio-radio" aria-label="Erica's Spotify playlist" inert><div class="radio-panel-head"><span>a soundtrack for wandering</span><button type="button" aria-label="Close music player" data-radio-close>×</button></div><div class="spotify-holder" data-spotify-holder></div><a class="spotify-external" href="https://open.spotify.com/playlist/2PaJIekKDK5GO3qzfKL73n" target="_blank" rel="noopener noreferrer">open the full playlist in Spotify</a></section>
-<script src="studio.js?v=11" defer></script>
+<script src="studio.js?v=12" defer></script>
 ${tail('')}`;
 }
