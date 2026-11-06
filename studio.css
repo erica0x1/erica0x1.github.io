@@ -226,3 +226,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 @media(prefers-reduced-motion:no-preference){
   .desk-companions:not(.is-offering):not(.is-music-open) .desktop-cat:not([data-state=sleep]):not([data-state=pet]):not(:hover):not(:focus-visible) .cat-sprites{transform-origin:50% 94%;animation:cat-curious-lean 9s ease-in-out infinite}
 }
+
+/* Calendar dates complement the original development duration. */
+.meta .project-period{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.5}
+
+.studio-project-caption .card-period{white-space:nowrap}
