@@ -9,4 +9,8 @@
   <path d="m20 25 6-2 2 5-6 2Z" fill="#365e43"/>
   <circle cx="25" cy="27" r="2" fill="#d9b66d"/>
  </g>
+ <!-- The center of this steady sparkle is the native cursor hotspot (19, 7). -->
+ <path d="M19 1.7 20.4 5.6 24.3 7 20.4 8.4 19 12.3 17.6 8.4 13.7 7 17.6 5.6Z" fill="#e4c276" stroke="#fffaf0" stroke-width="2.8" stroke-linejoin="round"/>
+ <path d="M19 1.7 20.4 5.6 24.3 7 20.4 8.4 19 12.3 17.6 8.4 13.7 7 17.6 5.6Z" fill="#e4c276" stroke="#354c3e" stroke-width="1.1" stroke-linejoin="round"/>
+ <circle cx="19" cy="7" r=".8" fill="#fffaf0"/>
 </svg>

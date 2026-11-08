@@ -72,17 +72,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 .studio-project a .studio-project-caption h3{transition:color .3s}
 .studio-project a:hover .studio-project-caption h3,.studio-project a:focus-visible .studio-project-caption h3{color:var(--berry)}
 .project-open{color:var(--berry)}
-.holiday-ornaments{position:absolute;z-index:6;top:-11px;right:26px;width:106px;height:auto;pointer-events:none;user-select:none;transform-origin:55% 8%;filter:drop-shadow(1px 4px 2px #111c142c)}
 .tape{background-color:#d9d2b4b8;background-image:repeating-linear-gradient(0deg,transparent 0 7px,#586c5047 7px 12px,transparent 12px 17px,#a857484d 17px 21px),repeating-linear-gradient(90deg,transparent 0 8px,#a8574873 8px 14px,transparent 14px 19px,#536a4f57 19px 24px);opacity:.9}
 .paper-date{color:var(--berry)}
 .mini-record:before{background:#a85a4e}.mini-record:after{background:#ead7b9}
 .radio-toggle[aria-expanded=true]{border-color:#a9b6a0}.radio-plus{color:var(--berry)}
 .pet-heart{color:var(--berry)}
 .cat-present{position:absolute;left:1px;bottom:43px;width:29px;height:auto;pointer-events:none;image-rendering:pixelated;filter:drop-shadow(1px 2px 1px #30372f20)}
-@keyframes ornament-sway{0%,100%{transform:rotate(0)}25%{transform:rotate(4deg)}60%{transform:rotate(-2.5deg)}82%{transform:rotate(1deg)}}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.blackboard-frame:hover .holiday-ornaments{animation:ornament-sway 1.8s ease-in-out}}
-@media(max-width:760px){.holiday-ornaments{width:79px;right:17px;top:-9px}.cat-present{width:23px;left:-2px;bottom:36px}}
-@media(max-width:420px){.holiday-ornaments{width:65px;right:14px;top:-9px}.cat-present{width:20px;left:-2px;bottom:32px}}
+@media(max-width:760px){.cat-present{width:23px;left:-2px;bottom:36px}}
+@media(max-width:420px){.cat-present{width:20px;left:-2px;bottom:32px}}
 @media(min-width:1600px){.desk-companions{right:38px;bottom:28px}.studio-radio{right:38px;bottom:196px}}
 @media(max-width:1100px){.board-copy{grid-template-columns:minmax(0,1fr) 190px;gap:20px;padding-inline:28px}.board-copy p{font-size:12px}.blackboard,.board-copy{min-height:315px}.selected-grid{column-gap:25px}.studio-feature .studio-project-image{aspect-ratio:1.02}.desk-companions{width:116px;right:15px;bottom:16px}.desktop-cat{width:100px;height:100px}.radio-toggle{width:116px;font-size:9px;gap:6px;padding:8px}.studio-radio{right:16px;bottom:167px}.pet-bubble{bottom:133px}}
 @media(max-width:760px){.header-inner{height:66px}.brand{font-size:26px}.nav{gap:22px;font-size:11px}.studio-hero{padding-top:17px}.blackboard-frame{padding:8px 8px 10px}.blackboard,.board-copy{min-height:305px}.board-copy{display:block;padding:36px 24px 82px}.board-copy h1{font-size:clamp(82px,16vw,120px);letter-spacing:-.055em}.board-copy p{font-size:11px;line-height:1.5;margin:15px 0 0 5px}.board-hint{font-size:12px;padding-bottom:13px}.board-tools{gap:20px;padding-right:0}.chalk-tool{width:47px}.eraser-tool{width:87px}.board-ledge{height:14px;bottom:-5px}.board-foot{padding-top:18px}.board-foot>span{font-size:12px}.board-foot .quiet-button{font-size:10px}.selected-work{padding-top:57px}.studio-section-heading{margin-bottom:21px}.studio-section-heading h2{font-size:13px}.studio-section-heading>span{font-size:9px}.selected-grid{grid-template-columns:1fr 1fr;gap:27px 17px}.studio-feature{grid-column:1/-1;grid-row:auto}.studio-feature .studio-project-image{aspect-ratio:1.5}.studio-project-image{aspect-ratio:1.55}.studio-project-caption h3{font-size:25px}.studio-feature .studio-project-caption h3{font-size:30px}.studio-project-caption p{font-size:10px}.all-games-action{margin-top:24px;gap:20px}.all-games-action .handwritten{font-size:15px;max-width:150px}.all-games-toggle{font-size:12px;gap:17px}.archive-grid{grid-template-columns:1fr 1fr;gap:29px 17px}.archive-grid .studio-project-caption h3{font-size:24px}.studio-about{padding-top:72px}.studio-contact{padding-top:45px;padding-bottom:60px;display:block}.studio-contact h2{font-size:48px}.studio-contact-links{margin-top:30px}.studio-contact-links a{font-size:12px}.footer{padding-bottom:120px;font-size:9px;gap:16px}.desk-companions{right:12px;bottom:12px;width:90px}.desktop-cat{width:88px;height:88px}.radio-toggle{width:90px;padding:8px 7px;font-size:8px;gap:5px}.radio-plus{display:none}.mini-record{width:17px;height:17px}.mini-record:before{inset:6px}.mini-record:after{inset:8px}.pet-bubble{font-size:14px;bottom:116px}.studio-radio{bottom:144px;right:12px;width:330px}.project-open{width:29px;height:29px;font-size:16px;right:10px;bottom:10px;opacity:1;transform:none}}
@@ -157,7 +154,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 @media(max-width:760px){.board-copy h1{font-size:clamp(62px,13vw,98px)}}
 @media(max-width:420px){.board-copy h1{font-size:clamp(48px,15vw,63px)}}
 
-@media(hover:hover) and (pointer:fine){body{cursor:url('assets/studio/candy-cane-cursor.svg') 19 7,auto}a,button,summary,[role=button]{cursor:url('assets/studio/candy-cane-cursor.svg') 19 7,pointer}.blackboard.tool-active #chalk-canvas{cursor:none}.board-tools button{cursor:grab}.board-tools button:active{cursor:grabbing}.portfolio-pages button,[data-lightbox]{cursor:zoom-in}}
+@media(hover:hover) and (pointer:fine){body{cursor:url('assets/studio/candy-cane-cursor.svg?v=2') 19 7,auto}a,button,summary,[role=button]{cursor:url('assets/studio/candy-cane-cursor.svg?v=2') 19 7,pointer}.blackboard.tool-active #chalk-canvas{cursor:none}.board-tools button{cursor:grab}.board-tools button:active{cursor:grabbing}.portfolio-pages button,[data-lightbox]{cursor:zoom-in}}
 /* Move the enlarged portrait back a little without shifting the biography. */
 @media(min-width:761px){
   .about-photo{width:100%;max-width:none;transform:translateX(calc(clamp(40px,6.5vw,92px)/2 - 18px)) scale(1.1)}
@@ -206,13 +203,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
   .studio-radio{bottom:150px}
 }
 
-/* Paper rings and cut-paper stars, like a classroom dressed for Christmas. */
-.board-paper-chain{position:absolute;z-index:6;left:12px;right:12px;top:-5px;pointer-events:none;user-select:none;filter:drop-shadow(0 2px 1px #17271d24)}
-.board-paper-chain img{display:block;width:100%;height:auto}
-.board-paper-stars{position:absolute;z-index:6;left:1px;top:1px;width:80px;height:auto;pointer-events:none;user-select:none;filter:drop-shadow(1px 3px 1px #17271d30);transform-origin:25% 0}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.blackboard-frame:hover .board-paper-stars{animation:ornament-sway 2.4s ease-in-out}}
-@media(max-width:760px){.board-paper-chain{left:8px;right:8px;top:-3px}.board-paper-stars{width:43px;left:1px;top:4px}.holiday-ornaments{width:61px;right:10px;top:-6px}}
-@media(max-width:420px){.board-paper-stars{width:34px}.holiday-ornaments{width:48px;right:8px;top:-5px}}
+/* Fir branches rest over the frame; the center stays open for chalk writing. */
+.studio-hero{padding-top:72px}
+.board-evergreen{position:absolute;z-index:6;left:-12px;right:-12px;top:-66px;pointer-events:none;user-select:none;filter:drop-shadow(0 4px 3px #14231b26)}
+.board-evergreen img{display:block;width:100%;height:auto}
+@media(min-width:761px){.board-copy{padding-top:70px}}
+@media(max-width:1100px) and (min-width:761px){.studio-hero{padding-top:59px}.board-evergreen{top:-51px}}
+@media(max-width:760px){.studio-hero{padding-top:43px}.board-evergreen{left:-7px;right:-7px;top:-35px;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}}
+@media(max-width:420px){.studio-hero{padding-top:35px}.board-evergreen{top:-30px}}
 
 /* A small vertical offset keeps the biography in place. */
 .about-photo{position:relative;top:14px}

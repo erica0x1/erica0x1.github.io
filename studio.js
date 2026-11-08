@@ -205,7 +205,9 @@
     }
     function holidayChalk(){
       // These drawings share the chalk layer, so the felt eraser can remove them.
-      ctx.save();ctx.translate(w*(w>700?.68:.62),h-52);ctx.scale(w>700?1:.66,w>700?1:.66);
+      const roleLeft=Math.min(...roleLabels.map(label=>label.getBoundingClientRect().left))-board.getBoundingClientRect().left;
+      const treeX=w>700?Math.min(w*.68,roleLeft-65):w*.62;
+      ctx.save();ctx.translate(treeX,h-52);ctx.scale(w>700?1:.66,w>700?1:.66);
       ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=2.3;ctx.strokeStyle='#b6caa5';
       ctx.beginPath();ctx.moveTo(0,-66);[[-14,-46],[-7,-46],[-23,-27],[-12,-27],[-30,-6],[28,-6],[11,-27],[23,-27],[8,-46],[14,-46],[0,-66]].forEach(([x,y])=>ctx.lineTo(x,y));ctx.stroke();
       ctx.strokeStyle='#e7d5ae';ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(-3,-5);ctx.lineTo(-3,3);ctx.lineTo(4,3);ctx.lineTo(4,-5);ctx.stroke();
@@ -216,6 +218,25 @@
       ctx.strokeStyle='#d5dfd0';ctx.lineWidth=1.4;ctx.save();ctx.translate(48,-33);for(let i=0;i<3;i++){ctx.rotate(Math.PI/3);ctx.beginPath();ctx.moveTo(-8,0);ctx.lineTo(8,0);ctx.moveTo(-6,-2);ctx.lineTo(-4,0);ctx.lineTo(-6,2);ctx.moveTo(6,-2);ctx.lineTo(4,0);ctx.lineTo(6,2);ctx.stroke();}ctx.restore();
       [[-51,-55],[48,-72]].forEach(([x,y])=>{ctx.beginPath();ctx.moveTo(x-3,y);ctx.lineTo(x+3,y);ctx.moveTo(x,y-4);ctx.lineTo(x,y+4);ctx.stroke();});
       ctx.restore();
+      // A little window-marker village below the name; leave narrow boards clear.
+      const titleBottom=title.getBoundingClientRect().bottom-board.getBoundingClientRect().top;
+      if(w>700&&titleBottom<h-85){
+        ctx.save();ctx.translate(Math.min(150,w*.15),h-48);
+        ctx.strokeStyle='#e3e5da';ctx.fillStyle='#e3e5da';ctx.globalAlpha=.85;
+        ctx.lineWidth=1.35;ctx.lineCap='round';ctx.lineJoin='round';
+        const cottage=(x,y,width,height)=>{
+          ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+.5,y-height);ctx.lineTo(x+width/2,y-height-13);ctx.lineTo(x+width,y-height+.5);ctx.lineTo(x+width-.5,y);ctx.stroke();
+          ctx.beginPath();ctx.moveTo(x-3,y-height+1);ctx.lineTo(x+width/2,y-height-15);ctx.lineTo(x+width+3,y-height+2);ctx.stroke();
+          ctx.beginPath();ctx.moveTo(x+width*.48,y);ctx.lineTo(x+width*.48,y-10);ctx.lineTo(x+width*.7,y-10);ctx.lineTo(x+width*.7,y);ctx.stroke();
+          ctx.strokeRect(x+5,y-height+7,6,6);
+        };
+        cottage(0,0,31,28);cottage(49,-1,24,21);
+        ctx.beginPath();ctx.moveTo(21,-37);ctx.lineTo(21,-46);ctx.lineTo(26,-46);ctx.lineTo(26,-31);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(-7,4);ctx.quadraticCurveTo(23,1,40,4);ctx.quadraticCurveTo(61,6,82,2);ctx.stroke();
+        [[-8,-33],[40,-48],[79,-34],[93,-12]].forEach(([x,y])=>{ctx.beginPath();ctx.arc(x,y,.9,0,Math.PI*2);ctx.fill();});
+        ctx.beginPath();ctx.moveTo(91,-46);ctx.lineTo(91,-38);ctx.moveTo(87,-42);ctx.lineTo(95,-42);ctx.stroke();
+        ctx.restore();
+      }
     }
     function textLayer(animate=false){
       if(!w||!h)return;
