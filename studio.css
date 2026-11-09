@@ -154,7 +154,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6a
 @media(max-width:760px){.board-copy h1{font-size:clamp(62px,13vw,98px)}}
 @media(max-width:420px){.board-copy h1{font-size:clamp(48px,15vw,63px)}}
 
-@media(hover:hover) and (pointer:fine){body{cursor:url('assets/studio/candy-cane-cursor.svg?v=3') 19 7,auto}a,button,summary,[role=button]{cursor:url('assets/studio/candy-cane-cursor.svg?v=3') 19 7,pointer}.blackboard.tool-active #chalk-canvas{cursor:none}.board-tools button{cursor:grab}.board-tools button:active{cursor:grabbing}.portfolio-pages button,[data-lightbox]{cursor:zoom-in}}
+@media(hover:hover) and (pointer:fine){body{cursor:url('assets/studio/candy-cane-cursor.svg?v=4') 19 7,auto}a,button,summary,[role=button]{cursor:url('assets/studio/candy-cane-cursor.svg?v=4') 19 7,pointer}.blackboard.tool-active #chalk-canvas{cursor:none}.board-tools button{cursor:grab}.board-tools button:active{cursor:grabbing}.portfolio-pages button,[data-lightbox]{cursor:zoom-in}}
 /* Move the enlarged portrait back a little without shifting the biography. */
 @media(min-width:761px){
   .about-photo{width:100%;max-width:none;transform:translateX(calc(clamp(40px,6.5vw,92px)/2 - 18px)) scale(1.1)}
