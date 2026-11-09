@@ -9,7 +9,7 @@ export function renderHome({projects,esc,image,head,header,tail}) {
   return `${head('Erica Lin — Games & little worlds','Games, spaces, and interactive stories by Erica Lin. Game and level design at USC.').replace('<body>','<body class="studio-home">')}${header()}
 <main id="main">
   <section class="studio-hero wrap" aria-labelledby="hero-title">
-    <div class="blackboard-frame"><picture class="board-evergreen" aria-hidden="true"><source media="(max-width:760px)" srcset="assets/studio/evergreen-garland-mobile.webp"><img src="assets/studio/evergreen-garland.webp" alt="" width="2132" height="310" draggable="false" fetchpriority="high"></picture>
+    <div class="blackboard-frame"><picture class="board-evergreen" aria-hidden="true"><source media="(max-width:420px)" srcset="assets/studio/illustrated-garland-mobile.webp"><img src="assets/studio/illustrated-garland.webp" alt="" width="2126" height="335" draggable="false" fetchpriority="high"></picture>
       <div class="blackboard" data-blackboard>
         <div class="board-copy"><h1 id="hero-title">Erica Lin</h1><ul class="board-roles" aria-label="What I do"><li><span>Game Designer</span></li><li><span>Level Designer</span></li><li><span>Systems Designer</span></li><li><span>Gameplay Programmer</span></li></ul></div>
         <canvas id="chalk-canvas" aria-label="An interactive chalkboard. Pick up the chalk to draw, or the eraser to wipe it." role="img"></canvas>
