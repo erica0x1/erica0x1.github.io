@@ -1,0 +1,7 @@
+# Garland without the pale backing
+
+Edited with the built-in image_gen tool on 2026-11-10. Input: illustrated-garland-source.png. The generated original is preserved in illustrated-garland-clean-source.png. The desktop and mobile WebP exports trim unused canvas margins; generated artwork and alpha are otherwise preserved.
+
+## Final prompt
+
+Use case: background-extraction / precise-object-edit. Edit this existing hand-drawn Christmas garland PNG. Remove ALL the pale cream/white/gray paper-like backing, hazy light halo, and white edging surrounding the pine branches, including pale backing BETWEEN the individual needles and ornaments. The foliage must have natural green edges directly against true transparent empty pixels, with NO white sticker outline, NO cream rim, NO white matte, NO drop shadow or outer glow. Keep the current colored-pencil / matte gouache style, all original green fir sprigs, two rust-red bows, red baubles and berries, brown pinecones, little warm yellow stars and a few pinpoint warm lights. Preserve the garland's exact shallow wide swag shape and relative placement of every branch and decoration; do not redesign or add decorations. Retain cream painted details INSIDE pinecones and baubles where they are part of the art; remove only background/edge fringe. Output ONLY the cleaned isolated horizontal garland on genuine transparent background, a panoramic 3:1 canvas, not a website or mockup. All unpainted space between leaves must be fully transparent. No white background and no soft pale wash.
