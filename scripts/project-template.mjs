@@ -3,6 +3,7 @@ export function renderProject({p,next,esc,image,head,header,tail,figures,lightbo
   const normal=p.gallery.filter(g=>!g.spoiler),hasGallery=normal.length>0;
   const links=p.links.map(l=>`<a class="button" href="${esc(l.url)}" ${l.internal?'':external}>${esc(l.label)}</a>`).join('');
   const portfolio=(p.portfolio||[]).length?`<section class="portfolio-pages" id="portfolio" aria-label="${esc(p.title)} design portfolio">${p.portfolio.map((item,i)=>`<figure><button type="button" data-lightbox="${image(item.image,'../')}" data-image-group="portfolio" data-caption="${esc(p.title)} — design portfolio, page ${i+1}." aria-label="Enlarge design portfolio page ${i+1}"><img src="${image(item.image,'../')}" alt="${esc(p.title)} design portfolio — ${esc(item.caption)}" loading="${i===0&&visual?'eager':'lazy'}" decoding="async"></button></figure>`).join('')}</section>`:'';
+  // Format describes the game medium and verified play platform/adaptation, not its engine or fabrication method.
   const facts=[['Team Size',p.teamSize||'—'],['Role',p.role],['Duration',p.duration||'—'],['Format',p.platform]];
   const overview=`<section id="overview"><h2>Overview</h2><p class="lead">${esc(p.intro)}</p></section><section id="contribution"><h2>My contribution</h2><ul class="contributions">${p.contributions.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></section>`;
   const notes=p.sections.map((s,n)=>`<section${n===0?' id="process"':''}><h2>${esc(s.title)}</h2><p>${esc(s.body)}</p></section>`).join('');
